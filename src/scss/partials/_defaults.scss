@@ -1,0 +1,41 @@
+#h-basic {
+    font-weight: 600
+}
+
+h1 {
+    @extend #h-basic;
+    font-size: rem(35px);
+
+    @include bp-style(mobile, min) {
+        color: red;
+    }
+}
+
+h2 {
+    @extend #h-basic;
+    font-size: rem(30px);
+
+    @include bp-style(mobile, max) {
+        color: blue;
+    }
+}
+
+h3 {
+    @extend #h-basic;
+    font-size: rem(20px);
+}
+
+h4 {
+    @extend #h-basic;
+    font-size: rem(15px);
+}
+
+strong {
+    font-weight: bold;
+}
+
+.test {
+    margin-top: rem(50px);
+    height: rem(100px);
+    background: var(--highlight-light-opac);
+}

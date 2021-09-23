@@ -1,0 +1,25 @@
+/// Main palette of the design
+$mainPalette: (
+    primary: #4300AC,
+    secondary: #59009A,
+    highlight: #00d8ff
+);
+
+/// Generic palette containing only black, white and shades of them
+$genericPalette: (
+    gray: #1D1D1D,
+    beige: #C4C4C4,
+    black: #121212,
+    white: #F2F2F2
+);
+
+/// Known breakpoints
+$breakpoints: (
+    mobile: 480px,
+    tablet: 768px,
+    laptop: 1024px,
+    desktop: 1200px
+);
+
+/// Value of 1 REM unit
+$remValue: 16px;

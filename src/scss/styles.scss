@@ -1,0 +1,22 @@
+@use 'util' as *;
+
+@import 'defaults';
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @include applyColors;
+    min-height: 100vh;
+    font-size: $remValue;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    @extend html;
+    background: var(--primary);
+    color: var(--white);
+}
