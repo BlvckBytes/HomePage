@@ -11,7 +11,7 @@
 @function buildColorMap($delta: 5%, $opac: 0.5) {
     $colors: ();
 
-    @each $name, $color in map-merge($mainPalette, $genericPalette) {
+    @each $name, $color in map-merge($main-palette, $generic-palette) {
         $colors: map-merge($colors, (
             // Base colors
             $name: $color,
@@ -30,16 +30,29 @@
     @return $colors;
 }
 
-/// Translate all known SCSS colors (@see {function} buildColorMap)
-/// to CSS variables
-/// @output Native CSS color variables
-@mixin applyColors {
+:root {
+    // Apply color variables as custom properties
     @each $name, $color in buildColorMap() {
         // Skip null values
         @if $color {
             --#{$name}: #{$color};
         }
     }
+
+    // Apply font-sizes
+    @each $tag, $size in $font-sizes {
+        #{$tag} {
+            font-size: $size;
+        }
+    }
+
+    // Apply spacings
+    @each $name, $size in $spacings {
+        --#{$name}: #{$size};
+    }
+
+    // Apply REM
+    font-size: rem-value;
 }
 
 /// Apply styles only for a certain breakpoint
@@ -68,7 +81,7 @@
 /// @param {Number} $pixels Pixel value
 /// @return Resulting value in REMs
 @function rem($pixels) {
-    @return #{$pixels / $remValue}rem;
+    @return #{$pixels / $rem-value}rem;
 }
 
 /// Inline keyframe animation from content

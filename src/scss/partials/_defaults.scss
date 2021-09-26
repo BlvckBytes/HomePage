@@ -1,41 +1,12 @@
-#h-basic {
-    font-weight: 600
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-    @extend #h-basic;
-    font-size: rem(35px);
-
-    @include bp-style(mobile, min) {
-        color: red;
-    }
-}
-
-h2 {
-    @extend #h-basic;
-    font-size: rem(30px);
-
-    @include bp-style(mobile, max) {
-        color: blue;
-    }
-}
-
-h3 {
-    @extend #h-basic;
-    font-size: rem(20px);
-}
-
-h4 {
-    @extend #h-basic;
-    font-size: rem(15px);
-}
-
-strong {
-    font-weight: bold;
-}
-
-.test {
-    margin-top: rem(50px);
-    height: rem(100px);
-    background: var(--highlight-light-opac);
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    min-height: calc(var(--vh, 1vh) * 100);
 }

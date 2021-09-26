@@ -1,16 +1,17 @@
 /// Main palette of the design
-$mainPalette: (
+$main-palette: (
     primary: #4300AC,
     secondary: #59009A,
     highlight: #00d8ff
 );
 
 /// Generic palette containing only black, white and shades of them
-$genericPalette: (
-    gray: #1D1D1D,
-    beige: #C4C4C4,
-    black: #121212,
-    white: #F2F2F2
+$generic-palette: (
+    // Escaping CSS color names with through string notation
+    "gray": #1D1D1D,
+    "beige": #C4C4C4,
+    "black": #121212,
+    "white": #F2F2F2
 );
 
 /// Known breakpoints
@@ -21,5 +22,18 @@ $breakpoints: (
     desktop: 1200px
 );
 
-/// Value of 1 REM unit
-$remValue: 16px;
+/// Font sizes
+$rem-value: 16px;
+$font-sizes: (
+    h1: 3rem,
+    h2: 1.5rem,
+    h3: 1.1rem,
+    h4: 0.8rem
+);
+
+/// Spacings
+$spacings: (
+    spc-sm: 1rem,
+    spc-md: 2rem,
+    spc-lg: 3rem
+);
