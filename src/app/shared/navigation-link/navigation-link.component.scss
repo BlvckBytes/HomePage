@@ -1,0 +1,77 @@
+@use 'util' as *;
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:not(:last-of-type) {
+        margin-right: var(--spc-400);
+    } 
+
+    @include bp-style(laptop, min) {
+        &:hover {
+            cursor: pointer;
+
+            .text-container {
+                height: 20rem;
+
+                &__text { 
+                    opacity: 1;
+                }
+            }
+        }
+
+        background: var(--gray-dark);
+        border-radius: 50%;
+
+        &:not(:last-of-type) {
+            margin-right: var(--spc-200);
+        } 
+
+        width: 2em;
+        height: 2em;
+    }
+
+    @include bp-style(mobile, max) {
+        background: red;
+    }
+}
+
+.icon {
+    filter: invert(1);
+    max-width: 1.2em;
+    max-height: 1.2em;
+
+    &--active {
+        filter: invert(70%) sepia(97%) saturate(269%) hue-rotate(160deg) brightness(92%) contrast(98%);
+    }
+}
+
+.text-container {
+    margin-left: var(--spc-100);
+
+    @include bp-style(laptop, min) {
+        margin: 0;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: calc(50% + 2em);
+
+        &__text {
+            background: var(--gray-dark);
+            padding: .5em .1em .4em .1em;
+            border-radius: .2em;
+            transition: opacity 100ms ease;
+            opacity: 0;
+            height: max-content;
+        }
+
+        transition: height .7s ease;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+    }
+}

@@ -16,7 +16,7 @@ $generic-palette: (
 
 /// Known breakpoints
 $breakpoints: (
-    mobile: 480px,
+    mobile: 450px,
     tablet: 768px,
     laptop: 1024px,
     desktop: 1200px
@@ -28,12 +28,16 @@ $font-sizes: (
     h1: 3rem,
     h2: 1.5rem,
     h3: 1.1rem,
-    h4: 0.8rem
+    h4: 0.8rem,
+    fs-sm: 0.8rem,
+    fs-md: 1.2rem,
+    fs-lg: 1.5rem  
 );
 
 /// Spacings
 $spacings: (
-    spc-sm: 1rem,
-    spc-md: 2rem,
-    spc-lg: 3rem
+    spc-100: .5em,
+    spc-200: 1em,
+    spc-300: 1.5em,
+    spc-400: 2em
 );

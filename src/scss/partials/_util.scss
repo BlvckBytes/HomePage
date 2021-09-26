@@ -40,10 +40,8 @@
     }
 
     // Apply font-sizes
-    @each $tag, $size in $font-sizes {
-        #{$tag} {
-            font-size: $size;
-        }
+    @each $name, $size in $font-sizes {
+        --#{$name}: #{$size};
     }
 
     // Apply spacings
@@ -100,5 +98,14 @@
     @if $repeating {
         animation-direction: alternate;
         animation-iteration-count: infinite;
+    }
+}
+
+/// Apply style for hovering
+@mixin on-hover() {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
     }
 }

@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    justify-content: space-between;
+    height: 2.8em;
+    background: var(--primary-dark);
+    color: var(--white);
+    padding: 0 var(--spc-300);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    &__image {
+        width: 2em;
+    }
+
+    &__text {
+        margin-left: var(--spc-100);
+    } 
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
