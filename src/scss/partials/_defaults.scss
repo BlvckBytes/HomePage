@@ -9,6 +9,6 @@
 html, body {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: var(--spc-600);
     min-height: calc(var(--vh, 1vh) * 100);
 }

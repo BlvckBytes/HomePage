@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: .5em 0;
+    padding: var(--spc-100) 0;
 
     // Separate to the right
     &:not(:last-of-type) {
@@ -16,8 +16,8 @@
         // Add bottom separator line, align left
         & {
             width: 80%;
-            padding: 0 0 1em 0;
-            margin: 0 0 1em 0 !important;
+            padding: 0 0 var(--spc-200) 0;
+            margin: 0 0 var(--spc-200) 0 !important;
             border-bottom: 1px solid var(--white-dark);
             justify-content: flex-start;
 

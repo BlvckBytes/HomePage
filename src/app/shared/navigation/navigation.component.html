@@ -1,37 +1,42 @@
-<!-- Logo and text -->
-<div class="logo">
-    <img class="logo__image" src="assets/logo.svg" alt="logo">
-    <p class="logo__text">blvckbytes.dev</p>
-</div>
-
-<!-- Navigation links -->
-<div class="links">
-    <!-- Clickable burger -->
-    <div (click)="toggleNav()" class="links__burger">
-        <span [@burgerTop]="navState()"></span>
-        <span [@burgerBottom]="navState()"></span>
+<div 
+    class="wrapper"
+    [class.wrapper--active]="isNavOpen"
+>
+    <!-- Logo and text -->
+    <div class="logo">
+        <img class="logo__image" src="assets/logo.svg" alt="logo">
+        <p class="logo__text">blvckbytes.dev</p>
     </div>
 
-    <!-- Link container -->
-    <div
-        [@content]="navState()"
-        (@content.start)="navStart($event)"
-        (@content.done)="navEnd($event)"
-        class="links__content"
-    >
-        <!-- Individual links -->
-        <app-navigation-link 
-            (click)="toggleNav()"
-            url="/home"
-            text="Home"
-            icon="house"
-        ></app-navigation-link>
+    <!-- Navigation links -->
+    <div class="links">
+        <!-- Clickable burger -->
+        <div (click)="toggleNav()" class="links__burger">
+            <span [@burgerTop]="navState()"></span>
+            <span [@burgerBottom]="navState()"></span>
+        </div>
 
-        <app-navigation-link
-            (click)="toggleNav()"
-            url="/projects"
-            text="Projects"
-            icon="bulb"
-        ></app-navigation-link>
+        <!-- Link container -->
+        <div
+            [@content]="navState()"
+            (@content.start)="navStart($event)"
+            (@content.done)="navEnd($event)"
+            class="links__content"
+        >
+            <!-- Individual links -->
+            <app-navigation-link 
+                (click)="toggleNav()"
+                url="/home"
+                text="Home"
+                icon="house"
+            ></app-navigation-link>
+
+            <app-navigation-link
+                (click)="toggleNav()"
+                url="/projects"
+                text="Projects"
+                icon="bulb"
+            ></app-navigation-link>
+        </div>
     </div>
 </div>
