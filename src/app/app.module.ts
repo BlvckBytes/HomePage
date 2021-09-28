@@ -5,14 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PageProjectsComponent } from './pages/page-projects/page-projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageHomeComponent
+    PageHomeComponent,
+    PageProjectsComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule
   ],

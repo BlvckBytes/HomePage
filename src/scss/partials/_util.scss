@@ -50,7 +50,7 @@
     }
 
     // Apply REM
-    font-size: rem-value;
+    font-size: $rem-value;
 }
 
 /// Apply styles only for a certain breakpoint
@@ -64,7 +64,8 @@
 
     // Create media query based on width from map
     @if map-has-key($breakpoints, $breakpoint) {
-        @media (#{$feature-type}-width: map-get($breakpoints, $breakpoint)) {
+        $delta: if($feature-type == min, 1, 0);
+        @media (#{$feature-type}-width: map-get($breakpoints, $breakpoint) + $delta) {
             @content;
         }
     }
@@ -86,7 +87,7 @@
 /// @param {Number} $duration Duration of animation
 /// @param {boolean} $repeating [false] Whether to infinitely repeat
 /// @output Keyframes declaration with unique ID and it's assignment
-@mixin keyframe-animation($duration, $repeating: false) {
+@mixin keyframe-animation($duration, $repeating: false, $delay: 0) {
     // Generate unique name
     $name: kfa-#{unique-id()};
 
@@ -94,18 +95,10 @@
     @keyframes #{$name} { @content; }
 
     // Apply animation
-    animation: $name $duration ease;
+    animation: $name $duration ease forwards;
+    animation-delay: $delay;
     @if $repeating {
         animation-direction: alternate;
         animation-iteration-count: infinite;
-    }
-}
-
-/// Apply style for hovering
-@mixin on-hover() {
-    @media (hover: hover) {
-        &:hover {
-            @content;
-        }
     }
 }

@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { burgerAnimations, contentAnimations } from './navigation.animations';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
+  animations: [
+    ...burgerAnimations(250),
+    ...contentAnimations(250)
+  ]
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
 
-  constructor() { }
+  // Content wrapper class, active when no animations occur
+  private contentClass = 'links__content--animdone';
+  isNavOpen = false;
 
-  ngOnInit(): void {
+  toggleNav() {
+    this.isNavOpen = !this.isNavOpen;
   }
 
+  navState() {
+    // Translate nav state to trigger name
+    return this.isNavOpen ? 'open' : 'closed';
+  }
+
+  navStart(event: any) {
+    event.element.classList.remove(this.contentClass);
+  }
+
+  navEnd(event: any) {
+    event.element.classList.add(this.contentClass);
+  } 
 }

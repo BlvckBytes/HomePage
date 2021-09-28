@@ -5,19 +5,38 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: .5em 0;
 
+    // Separate to the right
     &:not(:last-of-type) {
         margin-right: var(--spc-400);
-    } 
+    }
+    
+    @include bp-style(mobile, max) {
+        // Add bottom separator line, align left
+        & {
+            width: 80%;
+            padding: 0 0 1em 0;
+            margin: 0 0 1em 0 !important;
+            border-bottom: 1px solid var(--white-dark);
+            justify-content: flex-start;
 
+            &:last-of-type {
+                margin-bottom: 0;
+                border-bottom: 0;
+            }
+        }
+    }
+
+    // Turn links into clickable circles
     @include bp-style(laptop, min) {
         &:hover {
             cursor: pointer;
-
+            
+            // Expand tooltip
             .text-container {
-                height: 20rem;
-
-                &__text { 
+                height: 15rem;
+                &__text {
                     opacity: 1;
                 }
             }
@@ -33,19 +52,27 @@
         width: 2em;
         height: 2em;
     }
-
-    @include bp-style(mobile, max) {
-        background: red;
-    }
 }
 
 .icon {
-    filter: invert(1);
-    max-width: 1.2em;
-    max-height: 1.2em;
+    // Same width for all icons
+    width: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &--active {
-        filter: invert(70%) sepia(97%) saturate(269%) hue-rotate(160deg) brightness(92%) contrast(98%);
+    &__img {
+        // Constrain max-size, other val is auto
+        max-width: 1.2em;
+        max-height: 1.2em;
+        
+        // Change black to white
+        filter: invert(1);
+        
+        // Change black to blue (autogen)
+        &--active {
+            filter: invert(70%) sepia(97%) saturate(269%) hue-rotate(160deg) brightness(92%) contrast(98%);
+        }
     }
 }
 
@@ -53,12 +80,21 @@
     margin-left: var(--spc-100);
 
     @include bp-style(laptop, min) {
+        // Below circle
         margin: 0;
         height: 0;
         overflow: hidden;
         position: absolute;
         top: calc(50% + 2em);
+        transition: height .7s ease;
 
+        // Vertical text
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+
+        // Visual container
         &__text {
             background: var(--gray-dark);
             padding: .5em .1em .4em .1em;
@@ -67,11 +103,5 @@
             opacity: 0;
             height: max-content;
         }
-
-        transition: height .7s ease;
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        text-transform: uppercase;
-        letter-spacing: .5em;
     }
 }
