@@ -6,11 +6,12 @@
     display: flex;
 }
 
+// Extra wrapper to keep "whitespace" from host element
 .wrapper {
     justify-content: space-between;
     background: var(--primary-dark);
     color: var(--white);
-    padding: 0 var(--spc-300);
+    padding: 0 var(--spc-lg);
     position: fixed;
     z-index: 1000;
 
@@ -28,8 +29,8 @@
     }
 
     &__text {
-        margin-left: var(--spc-100);
-    } 
+        margin-left: var(--spc-sm);
+    }
 }
 
 .links {
@@ -39,7 +40,7 @@
         user-select: none;
         position: relative;
 
-        @include bp-style(mobile, min) {
+        @include bp-style(mobile, more) {
             // Reset the content-wrapper properties
             &__content--animdone {
                 height: auto !important;
@@ -60,7 +61,7 @@
         
         // Center both spans v/h
         // Translating happens within animations
-        & span {
+        span {
             display: block;
             position: absolute;
             width: 1.2em;
@@ -72,7 +73,7 @@
         }
     }
     
-    @include bp-style(mobile, max) {
+    @include bp-style(mobile) {
         // Show burger
         &__burger {
             display: block;
@@ -90,7 +91,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding-top: var(--spc-400);
+            padding-top: var(--spc-xl);
         }
     }
 }

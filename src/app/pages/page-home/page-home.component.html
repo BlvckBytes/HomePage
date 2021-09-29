@@ -1,28 +1,55 @@
-<div class="section section--gradient">
-    <div class="section-content">
+<div class="section section--gradient section--hero">
+    <div class="section__content">
+        <div class="hero__typeblock">
+            <h1>Passionate problem solver,<br>creative minded</h1>
+            <h3>Developing since 2016</h3>
+
+            <p>Striving to translate creative and inventive ideas straight into efficient and future-proof implementations.</p>
+
+            <div class="hero__typeblock__buttons">
+                <app-button
+                    url="#contact"
+                    text="Get In Touch"
+                ></app-button>
+
+                <app-button
+                    url="#services"
+                    text="My Services"
+                    icon="wrench"
+                    [filled]="false"
+                ></app-button>
+            </div>
+        </div>
+
+        <div class="hero__image">
+            <img src="assets/laptop.svg" alt="laptop">
+            <img src="assets/laptop-shadowed.svg" alt="laptop">
+        </div>
+
+        <img class="hero__scroll" src="assets/mouse.svg" alt="mouse">
     </div>
 </div>
 
 <div class="section section--dark">
-    <div class="section-content">
-        <h1 class="section__headline">About Me</h1>
+    <div class="section__content">
+        <h2 class="section__headline">About Me</h2>
     </div>
 </div>
 
 <div class="section section--primary">
-    <div class="section-content">
-        <h1 class="section__headline">Offered Services</h1>
+    <div class="section__content">
+        <h2 class="section__headline" id="services">Offered Services</h2>
     </div>
 </div>
 
 <div class="section section--dark">
-    <div class="section-content">
-        <h1 class="section__headline">Acquired Skills</h1>
+    <div class="section__content">
+        <h2 class="section__headline">Acquired Skills</h2>
     </div>
 </div>
 
 <div class="section section--primary">
-    <div class="section-content">
-        <h1 class="section__headline">Get In Touch</h1>
+    <div class="section__content" id="contact">
+        <h2 class="section__headline">Get In Touch</h2>
     </div>
 </div>

@@ -9,6 +9,30 @@
 html, body {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
-    scroll-padding-top: var(--spc-600);
+    scroll-padding-top: calc(2.8em + var(--spc-xl));
     min-height: calc(var(--vh, 1vh) * 100);
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+p {
+    font-size: var(--fs-p1);
+}
+
+p.p--2 {
+    font-size: var(--fs-p2);
+}
+
+p.p--3 {
+    font-size: var(--fs-p3);
 }

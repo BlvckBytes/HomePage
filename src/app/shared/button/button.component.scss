@@ -1,0 +1,56 @@
+@use 'util' as *;
+
+:host {
+    display: flex;
+    align-items: center;
+    color: var(--highlight);
+    padding: var(--spc-xs) var(--spc-lg);
+    border-radius: 1em;
+    user-select: none;
+    transition:
+        background-color 150ms ease,
+        color 150ms ease;
+    flex-grow: 0;
+    font-size: var(--fs-p1);
+
+    @include bp-style(laptop, min) {
+        // Add hover effects
+        &:hover {
+            cursor: pointer;
+            
+            // Lighten background
+            &.button--filled {
+                background: var(--highlight-light);
+            }
+
+            // Lighten text
+            &:not(.button--filled) {
+                color: var(--highlight-light);
+            }
+        }
+    }
+
+    &.button--filled {
+        background: var(--highlight);
+        color: var(--black);
+    }
+
+    &:not(.button--filled) {
+        text-decoration: underline;
+    }
+}
+
+.icon {
+    filter: $iconFilterDefault;
+    margin-right: var(--spc-xs);
+    max-width: 1.8em;
+}
+
+.arrow {
+    max-width: 1em;
+    margin-left: var(--spc-sm);
+}
+
+.icon--color {
+    filter: $iconFilterColor;
+}

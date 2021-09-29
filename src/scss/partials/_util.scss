@@ -1,14 +1,16 @@
 @use 'config' as *;
+@use 'boilerplate' as *;
+
 @use 'sass:map';
 @use 'sass:color';
 
-@forward 'config' show $remValue;
+@forward 'config';
 
 /// Generate a light, dark and opac version for every color
 /// next to the native value itself
 /// @param {Number} $delta [5%] Amount to lighten/darken colors, null for none
 /// @param {Number} $opac [0.5] Opacity of opac values, null for none
-@function buildColorMap($delta: 5%, $opac: 0.5) {
+@function buildColorMap($delta: 15%, $opac: 0.5) {
     $colors: ();
 
     @each $name, $color in map-merge($main-palette, $generic-palette) {
@@ -30,49 +32,63 @@
     @return $colors;
 }
 
-:root {
-    // Apply color variables as custom properties
-    @each $name, $color in buildColorMap() {
-        // Skip null values
-        @if $color {
-            --#{$name}: #{$color};
-        }
-    }
-
-    // Apply font-sizes
-    @each $name, $size in $font-sizes {
-        --#{$name}: #{$size};
-    }
-
-    // Apply spacings
-    @each $name, $size in $spacings {
-        --#{$name}: #{$size};
-    }
-
-    // Apply REM
-    font-size: $rem-value;
-}
-
 /// Apply styles only for a certain breakpoint
 /// @param {String} $breakpoint Name of known breakpoint, @see {variable} $breakpoints
-/// @param {String} $feature-type Type of query-feature, either min or max
+/// @param {String} $scope Scope of query, can be range | less | more | min | max
 /// @output Constructed media query with provided content
-@mixin bp-style($breakpoint, $feature-type) {
-    @if $feature-type != min and $feature-type != max {
-        @error "Feature type #{$feature-type} is not known!";
-    } 
-
+@mixin bp-style($breakpoint, $scope: range) {
     // Create media query based on width from map
     @if map-has-key($breakpoints, $breakpoint) {
-        $delta: if($feature-type == min, 1, 0);
-        @media (#{$feature-type}-width: map-get($breakpoints, $breakpoint) + $delta) {
+        $bounds: map-get($breakpoints, $breakpoint);
+        $bounds-min: nth($bounds, 1);
+        $bounds-max: nth($bounds, 2);
+
+        // Max bound check
+        @if ($scope == more or $scope == max) and $bounds-max == -1 {
+            @error 'Cannot use max of #{$breakpoint}, (max = -1)!';
+        }
+
+        // Min bound check
+        @if ($scope == less or $scope == min) and $bounds-min == -1 {
+            @error 'Cannot use min of #{$breakpoint}, (min = -1)!';
+        }
+
+        // Apply min-width if not -1
+        $min-instr: if(
+            $bounds-min != -1 and $scope != max,
+            ' and (min-width: #{$bounds-min})',
+            ''
+        );
+
+        // Apply max-width if not -1
+        $max-instr: if(
+            $bounds-max != -1 and $scope != min,
+            ' and (max-width: #{$bounds-max})',
+            ''
+        );
+
+        // More: min-width: <max-bound>, no max-width
+        @if $scope == more {
+            $min-instr: ' and (min-width: #{$bounds-max})';
+            $max-instr: '';
+        }
+
+        // Less: max-width: <min-bound>, no min-width
+        @if $scope == less {
+            $min-instr: '';
+            $max-instr: ' and (max-width: #{$bounds-min})';
+        }
+
+        // Build query from template
+        @debug '(#{$breakpoint}, #{$scope}): #{'only screen' + $min-instr + $max-instr}';
+        @media #{'only screen' + $min-instr + $max-instr} {
             @content;
         }
     }
     
     // Breakpoint not known within map
     @else {
-        @error "Breakpoint #{$breakpoint} is not specified!";
+        @error 'Breakpoint #{$breakpoint} is not specified!';
     }
 }
 
@@ -101,4 +117,31 @@
         animation-direction: alternate;
         animation-iteration-count: infinite;
     }
+}
+
+:root {
+    // Apply color vars
+    @each $name, $color in buildColorMap() {
+        // Skip null values (when dark/light and or opac are disabled)
+        @if $color {
+            --#{$name}: #{$color};
+        }
+    }
+
+    // Render initial var values directly into root
+    @each $name, $value in map-get($var-states, _fallback) {
+        --#{$name}: #{$value};
+    }
+
+    // Render all bp-dependent vars
+    @each $breakpoint, $size in $breakpoints {
+        @include bp-style($breakpoint) {
+            @each $name, $value in map-get($var-states, $breakpoint) {
+                --#{$name}: #{$value};
+            }
+        }
+    }
+
+    // Apply REM
+    font-size: var(--fs-base);
 }

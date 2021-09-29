@@ -32,9 +32,9 @@ export class NavigationLinkComponent implements OnInit {
 
   @HostListener('click')
   onClick() {
-    if (this.url === '') return
+    if (this.url === '') return;
     if (this.url.startsWith("http"))
-      window.open(this.url, '_blank')
-    else this.router.navigate([this.url])
+      window.open(this.url, '_blank');
+    else this.router.navigate([this.url]);
   }
 }
