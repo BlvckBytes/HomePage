@@ -16,7 +16,9 @@
     z-index: 1000;
 
     &--active {
-        background: var(--gray);
+        @include bp-style(mobile, max) {
+            background: var(--gray);
+        }
     }
 }
 
