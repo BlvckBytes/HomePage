@@ -29,7 +29,7 @@ const createBurgerTrigger = (
       ]),
     ]),
   ]);
-};
+}
 
 export const burgerAnimations = (
   speed: number, // Animation speed
