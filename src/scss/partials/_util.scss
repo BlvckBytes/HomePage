@@ -80,7 +80,6 @@
         }
 
         // Build query from template
-        @debug '(#{$breakpoint}, #{$scope}): #{'only screen' + $min-instr + $max-instr}';
         @media #{'only screen' + $min-instr + $max-instr} {
             @content;
         }

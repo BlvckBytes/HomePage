@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {
 
@@ -17,7 +17,7 @@ export class ButtonComponent {
   filled = true;
 
   constructor(
-    private router: Router
+    private router: Router,
   ) {}
 
   @HostListener('click')
@@ -26,10 +26,10 @@ export class ButtonComponent {
 
     console.log(this.url);
 
-    if (this.url.startsWith("http"))
+    if (this.url.startsWith('http'))
       window.open(this.url, '_blank');
 
-    else if(this.url.startsWith('#'))
+    else if (this.url.startsWith('#'))
       document.querySelector(this.url)?.scrollIntoView();
 
     else this.router.navigate([this.url]);

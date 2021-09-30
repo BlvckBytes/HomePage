@@ -6,11 +6,11 @@ import { PageProjectsComponent } from './pages/page-projects/page-projects.compo
 const routes: Routes = [
   { path: 'projects', component: PageProjectsComponent },
   { path: 'home', component: PageHomeComponent },
-  { path: '**', redirectTo: 'home' }
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

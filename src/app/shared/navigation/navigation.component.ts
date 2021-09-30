@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { burgerAnimations, contentAnimations } from './navigation.animations';
 
 @Component({
@@ -7,8 +7,8 @@ import { burgerAnimations, contentAnimations } from './navigation.animations';
   styleUrls: ['./navigation.component.scss'],
   animations: [
     ...burgerAnimations(250),
-    ...contentAnimations(250)
-  ]
+    ...contentAnimations(250),
+  ],
 })
 export class NavigationComponent {
 

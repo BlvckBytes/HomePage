@@ -12,15 +12,15 @@ import { PageProjectsComponent } from './pages/page-projects/page-projects.compo
   declarations: [
     AppComponent,
     PageHomeComponent,
-    PageProjectsComponent
+    PageProjectsComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

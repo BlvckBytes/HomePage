@@ -8,14 +8,14 @@ import { ButtonComponent } from './button/button.component';
   declarations: [
     NavigationComponent,
     NavigationLinkComponent,
-    ButtonComponent
+    ButtonComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     NavigationComponent,
-    ButtonComponent
-  ]
+    ButtonComponent,
+  ],
 })
 export class SharedModule { }
