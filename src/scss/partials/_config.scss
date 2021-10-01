@@ -48,7 +48,13 @@ $var-states: (
         spc-sm: .5em,
         spc-md: 1em,
         spc-lg: 1.5em,
-        spc-xl: 2.2em
+        spc-xl: 2.2em,
+
+        // Icons
+        icn-sm: 1em,
+        icn-md: 2em,
+        icn-lg: 3em,
+        icn-xl: 4em
     ),
 
     television: (),
@@ -59,14 +65,24 @@ $var-states: (
         fs-h2: 1.1rem,
         fs-h3: .9rem,
         fs-p1: .9rem,
+
+        icn-sm: .8em,
+        icn-md: 1.8em,
+        icn-lg: 2.8em,
+        icn-xl: 3.8em
     ),
     mobile: (
         fs-h1: 1.5rem,
         fs-h2: 1.1rem,
         fs-h3: .8rem,
         fs-p1: .8rem,
+
+        icn-sm: .8em,
+        icn-md: 1.5em,
+        icn-lg: 2.5em,
+        icn-xl: 3.5em
     )
 );
 
 $iconFilterDefault: invert(1);
-$iconFilterColor: invert(70%) sepia(97%) saturate(269%) hue-rotate(160deg) brightness(92%) contrast(98%);
+$iconFilterHighlight: invert(66%) sepia(41%) saturate(2786%) hue-rotate(145deg) brightness(100%) contrast(107%);

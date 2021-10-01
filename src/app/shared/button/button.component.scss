@@ -43,14 +43,21 @@
 .icon {
     filter: $iconFilterDefault;
     margin-right: var(--spc-xs);
-    max-width: 1.8em;
+
+    max-width: var(--icn-md);
+    max-height: var(--icn-md);
 }
 
 .arrow {
-    max-width: 1em;
+    max-width: var(--icn-sm);
     margin-left: var(--spc-sm);
+
+    // Hide arrow on mobile
+    @include bp-style(mobile) {
+        display: none;
+    }
 }
 
 .icon--color {
-    filter: $iconFilterColor;
+    filter: $iconFilterHighlight;
 }

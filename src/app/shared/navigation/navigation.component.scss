@@ -27,7 +27,7 @@
     align-items: center;
 
     &__image {
-        width: 1.8em;
+        width: var(--icn-md);
     }
 
     &__text {

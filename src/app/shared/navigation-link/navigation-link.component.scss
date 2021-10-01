@@ -61,15 +61,15 @@
 
     &__img {
         // Constrain max-size, other val is auto
-        max-width: 1.2em;
-        max-height: 1.2em;
+        max-width: var(--icn-sm);
+        max-height: var(--icn-sm);
         
         // Change black to white
         filter: $iconFilterDefault;
         
         // Change black to blue (autogen)
         &--active {
-            filter: $iconFilterColor;
+            filter: $iconFilterHighlight;
         }
     }
 }

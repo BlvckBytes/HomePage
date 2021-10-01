@@ -66,7 +66,7 @@
     }
 
     &__scroll {
-        height: 2.6em;
+        max-height: var(--icn-lg);
         position: absolute;
         inset: auto auto 0 50%;
         filter: $iconFilterDefault;
@@ -83,6 +83,7 @@
         }
     }
 
+    // Center up typeblock and image in same column
     @include bp-style(desktop, less) {
         &__typeblock {
             text-align: center;
@@ -99,6 +100,41 @@
 
         &__image {
             width: clamp(15em, 2em + 50vw, 30em);
+        }
+    }
+}
+
+.about {
+
+    &__columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 20em);
+        justify-content: center;
+        gap: clamp(2.5em, 5vw, 4em);
+    }
+
+    &__item {
+        position: relative;
+        margin-top: calc(var(--icn-xl) + var(--spc-md));
+
+        h3 {
+            color: var(--white);
+            margin-bottom: var(--spc-md);
+        }
+
+        p {
+            color: var(--white-dark);
+        } 
+
+        img {
+            max-width: var(--icn-xl);
+            max-height: var(--icn-xl);
+
+            filter: $iconFilterHighlight;
+
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, calc(-100% - var(--spc-md)));
         }
     }
 }

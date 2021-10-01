@@ -5,4 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './page-home.component.html',
   styleUrls: ['./page-home.component.scss'],
 })
-export class PageHomeComponent {}
+export class PageHomeComponent {
+
+  myAge: number;
+
+  constructor() {
+    this.myAge = new Date().getFullYear() - 2001;
+  }
+}
