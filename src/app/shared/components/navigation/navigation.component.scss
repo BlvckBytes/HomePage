@@ -1,5 +1,9 @@
 @use 'util' as *;
 
+@use './partial-styles/logo';
+@use './partial-styles/links';
+@use './partial-styles/langs';
+
 :host, .wrapper {
     height: 2.8em;
     width: 100%;
@@ -19,116 +23,5 @@
         @include bp-style(mobile, max) {
             background: var(--gray);
         }
-    }
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-
-    &__image {
-        width: var(--icn-md);
-    }
-
-    &__text {
-        margin-left: var(--spc-sm);
-    }
-}
-
-.links {
-    &, &__content {
-        display: flex;
-        align-items: center;
-        user-select: none;
-        position: relative;
-
-        @include bp-style(mobile, more) {
-            // Reset the content-wrapper properties
-            &__content--animdone {
-                height: auto !important;
-                display: flex !important;
-            }
-        }
-    }
-
-    // Clickable burger container
-    // Shift right to account for extra click-whitespace
-    &__burger {
-        position: relative;
-        width: 2.2em;
-        transform: translateX(calc(.5em));
-        height: 100%;
-        z-index: 1;
-        display: none;
-        
-        // Center both spans v/h
-        // Translating happens within animations
-        span {
-            display: block;
-            position: absolute;
-            width: 1.2em;
-            height: .12em;
-            border-radius: .2em;
-            background: var(--white);
-            transform-origin: center center;
-            inset: 50% auto auto 50%;
-        }
-    }
-    
-    @include bp-style(mobile) {
-        // Show burger
-        &__burger {
-            display: block;
-        }
-
-        // Cover whole screen, minus nav-bar
-        &__content {
-            position: fixed;
-            width: 100vw;
-            height: calc(var(--vh) * 100 - 2.8em);
-            right: 0;
-            top: 2.8em;
-            background: var(--gray);
-            overflow: hidden;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: var(--spc-xl);
-        }
-    }
-}
-
-.langs {
-    padding: var(--spc-sm) 0;
-}
-
-.lang-entry {
-    display: flex;
-    align-items: center;
-    margin-bottom: var(--spc-sm);
-    padding: var(--spc-sm);
-    transition: background-color 100ms ease;
-
-    @include bp-style(laptop, min) {
-        &:hover {
-            background: var(--gray-dark-opac);
-        }
-    }
-
-    &--active {
-        background: var(--gray-dark-opac);
-    }
-
-    &:last-of-type {
-        margin-bottom: 0;
-    }
-    
-    &__img {
-        width: var(--icn-sm);
-        margin-left: var(--spc-md);
-    }
-
-    &__description {
-        margin: 0 var(--spc-xl) 0 var(--spc-sm);
     }
 }

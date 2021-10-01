@@ -1,0 +1,12 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__image {
+      width: var(--icn-md);
+  }
+
+  &__text {
+      margin-left: var(--spc-sm);
+  }
+}

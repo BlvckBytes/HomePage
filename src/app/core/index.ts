@@ -1,4 +1,5 @@
 import { LanguageService } from './service/language.service';
+import { TranslationLanguageModel } from './model/translation-language.model';
 
 const providers: any[] = [
   LanguageService,
@@ -7,4 +8,5 @@ const providers: any[] = [
 export {
   providers,
   LanguageService,
+  TranslationLanguageModel,
 };

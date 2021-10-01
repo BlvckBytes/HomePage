@@ -1,58 +1,9 @@
 @use 'util' as *;
 
-.expandable {
-    &__content {
-        position: relative;
-
-        // Small arrow pointing to entry's image
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: calc(.5em + 1em); // parent offset + circle / 2
-            transform: translateY(-100%) translateX(50%);
-            border: .6em solid transparent;
-            border-bottom: .5em solid var(--primary-dark);
-        }
-    }
-
-    &__wrapper {
-        position: absolute;
-        right: -.5em;
-        top: calc(100% + var(--spc-lg));
-        background: var(--primary-dark);
-        border-radius: .5em;
-
-        &--hidden {
-            display: none;
-        }
-    }
-}
-
-// Turn links into clickable circles
-@mixin host-circular {
-    &:hover {
-        cursor: pointer;
-        
-        // Expand tooltip
-        .text-container {
-            height: 15rem;
-            &__text {
-                opacity: 1;
-            }
-        }
-    }
-
-    background: var(--gray-dark);
-    border-radius: 50%;
-
-    &:not(:last-of-type) {
-        margin-right: var(--spc-md);
-    }
-
-    width: 2em;
-    height: 2em;
-}
+@use './partial-styles/common' as *;
+@use './partial-styles/icon';
+@use './partial-styles/tooltip';
+@use './partial-styles/expandable';
 
 :host {
     display: flex;
@@ -65,9 +16,9 @@
     &:not(:last-of-type) {
         margin-right: var(--spc-md);
     }
-    
+
     @include bp-style(mobile) {
-        // Leave expandables as circles
+        // Leave expandables alone
         &:not(.--expandable) {
             // Add bottom separator line, align left
             width: 80%;
@@ -81,97 +32,10 @@
                 border-bottom: 0;
             }
         }
-
-        // Bottom left of nav overlay
-        &.--expandable {
-            position: absolute;
-            bottom: 1rem;
-            left: 1rem;
-            transform: translateX(50%);
-        }
-
-        @at-root {
-            // Set above, instead of below the circle
-            .expandable {
-                &__wrapper {
-                    inset: auto;
-                    bottom: calc(100% + var(--spc-lg));
-                    left: 0;
-                }
-
-                &__content {
-                    &::before {
-                        inset: auto;
-                        bottom: 0;
-                        left: 1em;
-                        transform: translateY(100%) translateX(-50%);
-                        border: .6em solid transparent;
-                        border-top: .5em solid var(--primary-dark);
-                    }
-                }
-            }
-        }
     }
 
-    &.--expandable {
-        @include host-circular;
-    }
-
+    // Turn into circles
     @include bp-style(laptop, min) {
         @include host-circular;
-    }
-}
-
-.icon {
-    // Same width for all icons
-    width: 1.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &__img {
-        // Constrain max-size, other val is auto
-        max-width: var(--icn-sm);
-        max-height: var(--icn-sm);
-        
-        // Change black to white
-        &--filtered {
-            filter: $iconFilterDefault;
-        }
-        
-        // Change black to blue (autogen)
-        &--active#{&}--filtered {
-            filter: $iconFilterHighlight;
-        }
-    }
-}
-
-.text-container {
-    margin-left: var(--spc-sm);
-
-    @include bp-style(laptop, min) {
-        // Below circle
-        margin: 0;
-        height: 0;
-        overflow: hidden;
-        position: absolute;
-        top: calc(50% + 2em);
-        transition: height .7s ease;
-
-        // Vertical text
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        text-transform: uppercase;
-        letter-spacing: .5em;
-
-        // Visual container
-        &__text {
-            background: var(--gray-dark);
-            padding: .5em .1em .4em .1em;
-            border-radius: .2em;
-            transition: opacity 100ms ease;
-            opacity: 0;
-            height: max-content;
-        }
     }
 }

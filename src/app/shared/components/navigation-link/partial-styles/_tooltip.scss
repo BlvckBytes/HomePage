@@ -1,0 +1,31 @@
+@use 'util' as *;
+
+.text-container {
+  margin-left: var(--spc-sm);
+
+  @include bp-style(laptop, min) {
+      // Below circle
+      margin: 0;
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      top: calc(50% + 2em);
+      transition: height .7s ease;
+
+      // Vertical text
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      text-transform: uppercase;
+      letter-spacing: .5em;
+
+      // Visual container
+      &__text {
+          background: var(--gray-dark);
+          padding: .5em .1em .4em .1em;
+          border-radius: .2em;
+          transition: opacity 100ms ease;
+          opacity: 0;
+          height: max-content;
+      }
+  }
+}

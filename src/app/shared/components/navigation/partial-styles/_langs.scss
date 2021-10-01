@@ -1,0 +1,36 @@
+@use 'util' as *;
+
+.langs {
+  padding: var(--spc-sm) 0;
+}
+
+.lang-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spc-sm);
+  padding: var(--spc-sm);
+  transition: background-color 100ms ease;
+
+  @include bp-style(laptop, min) {
+      &:hover {
+          background: var(--gray-dark-opac);
+      }
+  }
+
+  &--active {
+      background: var(--gray-dark-opac);
+  }
+
+  &:last-of-type {
+      margin-bottom: 0;
+  }
+  
+  &__img {
+      width: var(--icn-sm);
+      margin-left: var(--spc-md);
+  }
+
+  &__description {
+      margin: 0 var(--spc-xl) 0 var(--spc-sm);
+  }
+}

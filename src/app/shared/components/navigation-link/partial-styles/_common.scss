@@ -1,0 +1,24 @@
+// Turn links into clickable circles
+@mixin host-circular {
+  &:hover {
+      cursor: pointer;
+      
+      // Expand tooltip
+      .text-container {
+          height: 15rem;
+          &__text {
+              opacity: 1;
+          }
+      }
+  }
+
+  background: var(--gray-dark);
+  border-radius: 50%;
+
+  &:not(:last-of-type) {
+      margin-right: var(--spc-md);
+  }
+
+  width: 2em;
+  height: 2em;
+}

@@ -1,0 +1,25 @@
+@use 'util' as *;
+
+.icon {
+  // Same width for all icons
+  width: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+      // Constrain max-size, other val is auto
+      max-width: var(--icn-sm);
+      max-height: var(--icn-sm);
+      
+      // Change black to white
+      &--filtered {
+          filter: $iconFilterDefault;
+      }
+      
+      // Change black to blue (autogen)
+      &--active#{&}--filtered {
+          filter: $iconFilterHighlight;
+      }
+  }
+}

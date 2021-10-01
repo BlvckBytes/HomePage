@@ -1,0 +1,105 @@
+@use 'util' as *;
+
+.section--hero {
+
+  // 2 col layout that will wrap
+  .section__content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      column-gap: clamp(2em, 5vw, 10em);
+      row-gap: 7em;
+      flex-wrap: wrap;
+
+      & > * {
+          flex-shrink: 0;
+      }
+  }
+}
+
+.hero {
+
+  &__typeblock {
+      max-width: 45em;
+      width: min-content;
+      text-align: left;
+
+      h1 {
+          color: var(--highlight);
+          text-transform: capitalize;
+
+          // Manually break in HTML
+          white-space: nowrap;
+      }
+  
+      h3 {
+          color: var(--beige);
+          text-transform: uppercase;
+          margin-top: var(--spc-sm);
+      }
+  
+      p {
+          margin-top: var(--spc-xl);
+          max-width: 80%;
+      }
+
+      &__buttons {
+          margin-top: var(--spc-xl);
+          display: flex;
+      }
+  }
+
+  &__image {
+      position: relative;
+      width: clamp(15em, 2em + 30vw, 40em);
+
+      img {
+          // Shadow-image out of flow
+          &:nth-of-type(2) {
+              position: absolute;
+              z-index: -1000;
+              top: 0;
+              left: 0;
+          }
+      }
+  }
+
+  &__scroll {
+      max-height: var(--icn-lg);
+      position: absolute;
+      inset: auto auto 0 50%;
+      filter: $iconFilterDefault;
+
+      // Bouncing animation
+      @include keyframe-animation(550ms, true) {
+          from {
+              transform: translate(-50%, -7em);
+          }
+
+          to {
+              transform: translate(-50%, -7.5em);
+          } 
+      }
+  }
+
+  // Center up typeblock and image in same column
+  @include bp-style(desktop, less) {
+      &__typeblock {
+          text-align: center;
+
+          p {
+              margin-left: auto;
+              margin-right: auto;
+          }
+
+          &__buttons {
+              justify-content: center;
+          }
+      }
+
+      &__image {
+          width: clamp(15em, 2em + 50vw, 30em);
+      }
+  }
+}

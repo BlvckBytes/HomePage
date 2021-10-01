@@ -1,1 +1,0 @@
-export { TranslationLanguageModel } from './model/translation-language.model';

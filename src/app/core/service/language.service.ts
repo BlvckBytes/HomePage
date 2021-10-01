@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TranslationLanguageModel } from '@bbd/shared';
+import { TranslationLanguageModel } from '@bbd/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
