@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '@bbd/core';
 import { burgerAnimations, contentAnimations } from './navigation.animations';
 
 @Component({
@@ -15,6 +16,10 @@ export class NavigationComponent {
   // Content wrapper class, active when no animations occur
   private contentClass = 'links__content--animdone';
   isNavOpen = false;
+
+  constructor(
+    public langService: LanguageService,
+  ) {}
 
   toggleNav() {
     this.isNavOpen = !this.isNavOpen;

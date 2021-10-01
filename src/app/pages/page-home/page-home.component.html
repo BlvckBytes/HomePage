@@ -1,20 +1,20 @@
 <div class="section section--gradient section--hero">
     <div class="section__content">
         <div class="hero__typeblock">
-            <h1>Passionate problem solver,<br>creative minded</h1>
-            <h3>Developing since 2016</h3>
+            <h1>{{ 'home.hero.headline-first' | translate }}<br>{{ 'home.hero.headline-second' | translate }}</h1>
+            <h3>{{ 'home.hero.subheadline' | translate }}</h3>
 
-            <p>Striving to translate creative and inventive ideas straight into efficient and future-proof implementations.</p>
+            <p>{{ 'home.hero.text' | translate }}</p>
 
             <div class="hero__typeblock__buttons">
                 <app-button
                     url="#contact"
-                    text="Get In Touch"
+                    text="{{ 'home.hero.btn-contact' | translate }}"
                 ></app-button>
 
                 <app-button
                     url="#services"
-                    text="My Services"
+                    text="{{ 'home.hero.btn-services' | translate }}"
                     icon="wrench"
                     [filled]="false"
                 ></app-button>
@@ -22,32 +22,32 @@
         </div>
 
         <div class="hero__image">
-            <img src="assets/laptop.svg" alt="laptop">
-            <img src="assets/laptop-shadowed.svg" alt="laptop">
+            <img src="graphics/laptop.svg" alt="laptop">
+            <img src="graphics/laptop-shadowed.svg" alt="laptop">
         </div>
 
-        <img class="hero__scroll" src="assets/mouse.svg" alt="mouse">
+        <img class="hero__scroll" src="graphics/mouse.svg" alt="mouse">
     </div>
 </div>
 
 <div class="section section--dark">
     <div class="section__content">
-        <h2 class="section__headline">About Me</h2>
+        <h2 class="section__headline">{{ 'home.about.headline' | translate }}</h2>
         <div class="about__columns">
             <div class="about__item">
-                <img src="assets/avatar.svg" alt="avatar">
-                <h3>My Life</h3>
-                <p>My name is Philip, also known as BlvckBytes. I’m {{myAge}} years old and have always been interested in all types of engineering.</p>
+                <img src="graphics/avatar.svg" alt="avatar">
+                <h3>{{ 'home.about.my-life.title' | translate }}</h3>
+                <p>{{ 'home.about.my-life.text' | translate:{ myAge: myAge } }}</p>
             </div>
             <div class="about__item">
-                <img src="assets/graduate.svg" alt="graduate">
-                <h3>Education</h3>
-                <p>Although I’m mostly self-taught, I have graduated at a higher technical college of computer since.</p>
+                <img src="graphics/graduate.svg" alt="graduate">
+                <h3>{{ 'home.about.education.title' | translate }}</h3>
+                <p>{{ 'home.about.education.text' | translate }}</p>
             </div>
             <div class="about__item">
-                <img src="assets/puzzle.svg" alt="puzzle">
-                <h3>Pursuits</h3>
-                <p>Besides web design and full-stack web development, I’m also working with low level hardware and engineer my own circuits.</p>
+                <img src="graphics/puzzle.svg" alt="puzzle">
+                <h3>{{ 'home.about.pursuits.title' | translate }}</h3>
+                <p>{{ 'home.about.pursuits.text' | translate }}</p>
             </div>
         </div>
     </div>
@@ -55,18 +55,18 @@
 
 <div class="section section--primary">
     <div class="section__content">
-        <h2 class="section__headline" id="services">Offered Services</h2>
+        <h2 class="section__headline" id="services">{{ 'home.services.headline' | translate }}</h2>
     </div>
 </div>
 
 <div class="section section--dark">
     <div class="section__content">
-        <h2 class="section__headline">Acquired Skills</h2>
+        <h2 class="section__headline">{{ 'home.skills.headline' | translate }}</h2>
     </div>
 </div>
 
 <div class="section section--primary">
     <div class="section__content" id="contact">
-        <h2 class="section__headline">Get In Touch</h2>
+        <h2 class="section__headline">{{ 'home.contact.headline' | translate }}</h2>
     </div>
 </div>

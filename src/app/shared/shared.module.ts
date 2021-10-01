@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationComponent } from './navigation/navigation.component';
-import { NavigationLinkComponent } from './navigation-link/navigation-link.component';
-import { ButtonComponent } from './button/button.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { NavigationLinkComponent } from './components/navigation-link/navigation-link.component';
+import { ButtonComponent } from './components/button/button.component';
+import { CoreModule } from 'app/core/core.module';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,11 @@ import { ButtonComponent } from './button/button.component';
   ],
   imports: [
     CommonModule,
+    CoreModule,
   ],
   exports: [
     NavigationComponent,
     ButtonComponent,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}

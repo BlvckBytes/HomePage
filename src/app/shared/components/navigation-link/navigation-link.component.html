@@ -1,0 +1,29 @@
+<!-- Link icon -->
+<div class="icon">
+    <img
+        class="icon__img"
+        [class.icon__img--filtered]="filterImage"
+        [class.icon__img--active]="isUrlActive"
+        src="graphics/{{icon}}.svg"
+        alt="{{icon}}"
+    >
+</div>
+
+<!-- Expandable container, toggles on click -->
+<div
+    (click)="$event.stopPropagation();"
+    class="expandable__wrapper"
+    [class.expandable__wrapper--hidden]="!isExpanded"
+>
+    <div class="expandable__content">
+        <ng-content></ng-content>
+    </div>
+</div>
+
+<!-- Link text, only render if no inner content provided -->
+<div
+    *ngIf="!expandable"
+    class="text-container"
+>
+    <p class="text-container__text">{{text}}</p>
+</div>

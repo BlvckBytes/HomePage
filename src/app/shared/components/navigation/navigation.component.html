@@ -1,0 +1,62 @@
+<div 
+    class="wrapper"
+    [class.wrapper--active]="isNavOpen"
+>
+    <!-- Logo and text -->
+    <div class="logo">
+        <img class="logo__image" src="graphics/logo.svg" alt="logo">
+        <p class="logo__text">blvckbytes.dev</p>
+    </div>
+
+    <!-- Navigation links -->
+    <div class="links">
+        <!-- Clickable burger -->
+        <div (click)="toggleNav()" class="links__burger">
+            <span [@burgerTop]="navState()"></span>
+            <span [@burgerBottom]="navState()"></span>
+        </div>
+
+        <!-- Link container -->
+        <div
+            [@content]="navState()"
+            (@content.start)="navStart($event)"
+            (@content.done)="navEnd($event)"
+            class="links__content"
+        >
+            <app-navigation-link 
+                (click)="toggleNav()"
+                url="/home"
+                text="{{ 'navigation.tooltips.home' | translate }}"
+                icon="house"
+            ></app-navigation-link>
+
+            <app-navigation-link
+                (click)="toggleNav()"
+                url="/projects"
+                text="{{ 'navigation.tooltips.projects' | translate }}"
+                icon="bulb"
+            ></app-navigation-link>
+
+            <!-- Language select -->
+            <app-navigation-link
+                #langExpandable
+                [icon]="'flag-' + langService.selectedLanguage().internalName"
+                [filterImage]="false"
+                [expandable]="true"
+            >
+                <div class="langs">
+                    <!-- Render all known languages -->
+                    <div
+                        (click)="langService.chooseLanguage(language.internalName); langExpandable.close()"
+                        class="lang-entry" 
+                        *ngFor="let language of langService.listLanguages()"
+                        [class.lang-entry--active]="language.isActive"
+                    >
+                        <img class="lang-entry__img" src="graphics/flag-{{language.internalName}}.svg" alt="flag">
+                        <p class="lang-entry__description">{{language.displayName}}</p>
+                    </div>
+                </div>
+            </app-navigation-link>
+        </div>
+    </div>
+</div>

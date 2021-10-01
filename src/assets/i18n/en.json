@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "tooltips": {
+      "home": "Home",
+      "projects": "Projects"
+    }
+  },
+  "home": {
+    "hero": {
+      "headline-first": "Passionate problem solver,",
+      "headline-second": "creative minded",
+      "subheadline": "Developing since 2016",
+      "text": "Striving to translate creative and inventive ideas straight into efficient and future-proof implementations.",
+      "btn-contact": "Get In Touch",
+      "btn-services": "My Services"
+    },
+    "about": {
+      "headline": "About me",
+      "my-life": {
+        "title": "My Life",
+        "text": "My name is Philip, also known as BlvckBytes. I’m {{myAge}} years old and have always been interested in all types of engineering."
+      },
+      "education": {
+        "title": "Education",
+        "text": "Although I’m mostly self-taught, I have graduated at a higher technical college of computer since."
+      },
+      "pursuits": {
+        "title": "Pursuits",
+        "text": "Besides web design and full-stack web development, I’m also working with low level hardware and engineer my own circuits."
+      }
+    },
+    "services": {
+      "headline": "Offered services"
+    },
+    "skills": {
+      "headline": "Acquired skills"
+    },
+    "contact": {
+      "headline": "Get in touch"
+    }
+  }
+}

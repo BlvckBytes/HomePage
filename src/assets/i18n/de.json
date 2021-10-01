@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "tooltips": {
+      "home": "Start",
+      "projects": "Projekte"
+    }
+  },
+  "home": {
+    "hero": {
+      "headline-first": "Passionierter problemlöser,",
+      "headline-second": "Kreatives Gehirn",
+      "subheadline": "Entwickler seit 2016",
+      "text": "Mein Ziel ist es, kreative und erfinderische Ideen direkt in eine effiziente und zukunftssichere Implementation zu übersetzen.",
+      "btn-contact": "Kontaktieren",
+      "btn-services": "Dienstleistungen"
+    },
+    "about": {
+      "headline": "Über mich",
+      "my-life": {
+        "title": "Mein Leben",
+        "text": "Mein Name ist Philip, auch als BlvckBytes bekannt. Ich bin {{myAge}} Jahre alt und war seit ich denken kann an verschiedenster Technologie interessiert."
+      },
+      "education": {
+        "title": "Ausbildung",
+        "text": "Ich brachte mir zwar meinen Wissensstand großteils selbst bei, schloss aber eine HTL für Informationstechnologie erfolgreich ab."
+      },
+      "pursuits": {
+        "title": "Interessen",
+        "text": "Neben Webdesign und der Full-Stack Webentwicklung arbeite ich gerne mit low-level Hardware und realisiere meine eigenen Schaltungen."
+      }
+    },
+    "services": {
+      "headline": "Dienstleistungen"
+    },
+    "skills": {
+      "headline": "Fähigkeiten"
+    },
+    "contact": {
+      "headline": "Kontaktaufnahme"
+    }
+  }
+}
