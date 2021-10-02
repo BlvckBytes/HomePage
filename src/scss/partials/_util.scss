@@ -1,5 +1,5 @@
 @use 'config' as *;
-@use 'boilerplate' as *;
+@use 'logic' as *;
 
 @use 'sass:map';
 @use 'sass:color';
@@ -143,4 +143,43 @@
 
     // Apply REM
     font-size: var(--fs-base);
+}
+
+/// Applies to grid containers that need a maximum number of
+/// columns, a symmetric gap as well as item-size constraints
+/// @param {Number} $max-columns Maximum number of columns
+/// @param {Number} $max-item-width Size of fully expanded item
+/// @param {Number} $min-item-width Size of fully contracted item
+/// @param {Number} $min-item-width-mobile Size of min-item-width on mobile
+/// @output All grid properties and width constraints
+@mixin grid-columns(
+  $max-columns, $gap, $max-item-width, $min-item-width,
+  $min-item-width-mobile: $min-item-width
+) {
+  // Create grid with centered cells, applying min-width
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-item-width, 1fr));
+  justify-content: center;
+  justify-items: center;
+  gap: $gap;
+
+  // Center grid container
+  margin: 0px auto;
+  width: 100%;
+  
+  // Max-width is all columns plus their spaces inbetween
+  max-width: calc(
+    #{$max-item-width} * #{$max-columns} +
+    (#{$max-columns} - 1) * #{$gap}
+  );
+  
+  // Items have max width
+  & > * {
+    max-width: $max-item-width;
+  }
+
+  // Adapt to mobile min-width
+  @include bp-style(mobile) {
+    grid-template-columns: repeat(auto-fit, minmax($min-item-width-mobile, 1fr));
+  }
 }

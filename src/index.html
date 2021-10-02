@@ -14,8 +14,8 @@
       document.documentElement.style.setProperty('--vh', `${vh}px`)
     }
     
-    // Call every time the window is resized, as well as initially
-    window.onresize = () => updateVh();
+    // Don't track vh for this project
+    // window.onresize = () => updateVh();
     updateVh();
   </script>
 

@@ -11,6 +11,7 @@
     justify-content: center;
     position: relative;
     padding: var(--spc-sm) 0;
+    user-select: none;
 
     // Separate to the right
     &:not(:last-of-type) {

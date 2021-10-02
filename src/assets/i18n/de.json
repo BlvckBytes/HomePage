@@ -30,7 +30,23 @@
       }
     },
     "services": {
-      "headline": "Dienstleistungen"
+      "headline": "Dienstleistungen",
+      "frontend": {
+        "title": "Frontend entwicklung",
+        "text": "Sie besitzen bereits ein vollendetes Design und benötigen nun eine anpassungsfähige, interaktive und wartbare Umsetzung als web-app?"
+      },
+      "backend": {
+        "title": "Backend Entwicklung",
+        "text": "Persistente Datenspeicherung, Benutzer, Rechtesysteme, dynamische Inhalte und andere kreative Features? Hier sind Sie richtig!"
+      },
+      "ui-ux": {
+        "title": "UI/UX design",
+        "text": "Wenn genügend Eigenschaften der eigenen Idee vorhanden sind, kann in agiler Zusammenarbeit ein maßgeschneidertes Design angefertigt werden."
+      },
+      "hosting": {
+        "title": "Hosting und Deployment",
+        "text": "Ich setze das Projekt in einer Echtzeitumgebung auf und dokumentiere diesen Arbeitsprozess für zukunftige Wartungen, sollte dies erwünscht sein."
+      }
     },
     "skills": {
       "headline": "Fähigkeiten"

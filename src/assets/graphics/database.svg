@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35.473" height="42.367" viewBox="0 0 35.473 42.367">
+  <g id="server" transform="translate(-42.166 0.5)">
+    <g id="Group_41" data-name="Group 41" transform="translate(42.666)">
+      <g id="Group_40" data-name="Group 40">
+        <path id="Path_624" data-name="Path 624" d="M59.9,0C50.239,0,42.667,3.408,42.667,7.756s7.572,7.756,17.236,7.756,17.236-3.408,17.236-7.756S69.568,0,59.9,0Zm0,13.789c-9.142,0-15.513-3.18-15.513-6.033S50.761,1.724,59.9,1.724,75.416,4.9,75.416,7.756,69.045,13.789,59.9,13.789Z" transform="translate(-42.667)" stroke="#000" stroke-width="1"/>
+      </g>
+    </g>
+    <g id="Group_43" data-name="Group 43" transform="translate(42.666 15.513)">
+      <g id="Group_42" data-name="Group 42">
+        <path id="Path_625" data-name="Path 625" d="M76.277,192a.862.862,0,0,0-.862.862c0,2.853-6.371,6.033-15.513,6.033s-15.513-3.18-15.513-6.033a.862.862,0,1,0-1.724,0c0,4.349,7.572,7.756,17.236,7.756s17.236-3.408,17.236-7.756A.862.862,0,0,0,76.277,192Z" transform="translate(-42.666 -192)" stroke="#000" stroke-width="1"/>
+      </g>
+    </g>
+    <g id="Group_45" data-name="Group 45" transform="translate(42.666 24.131)">
+      <g id="Group_44" data-name="Group 44">
+        <path id="Path_626" data-name="Path 626" d="M76.277,298.666a.862.862,0,0,0-.862.862c0,2.853-6.371,6.033-15.513,6.033s-15.513-3.18-15.513-6.033a.862.862,0,1,0-1.724,0c0,4.349,7.572,7.756,17.236,7.756s17.236-3.408,17.236-7.756A.862.862,0,0,0,76.277,298.666Z" transform="translate(-42.666 -298.666)" stroke="#000" stroke-width="1"/>
+      </g>
+    </g>
+    <g id="Group_47" data-name="Group 47" transform="translate(42.666 6.894)">
+      <g id="Group_46" data-name="Group 46">
+        <path id="Path_627" data-name="Path 627" d="M76.278,85.333a.862.862,0,0,0-.862.862v25.854c0,2.853-6.37,6.033-15.513,6.033s-15.513-3.18-15.513-6.033V86.195a.862.862,0,1,0-1.724,0v25.854c0,4.349,7.572,7.756,17.236,7.756s17.236-3.408,17.236-7.756V86.195A.862.862,0,0,0,76.278,85.333Z" transform="translate(-42.667 -85.333)" stroke="#000" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

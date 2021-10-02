@@ -1,0 +1,49 @@
+@use 'util' as *;
+
+.services {
+  
+  &__columns {
+    @include grid-columns(3, clamp(2.5em, 5vw, 4em), 25em, 20em, 15em);
+  }
+
+  &__item {
+    position: relative;
+    border: .1em dashed var(--white);
+    
+    border-radius: 1em;
+    padding: 1.5em 1em 1em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    h3 {
+      margin-bottom: 1.3em;
+      text-transform: capitalize;
+    }
+
+    &__image {
+
+      img {
+        filter: $iconFilterDefault;
+        max-width: var(--icn-sm);
+        max-height: var(--icn-sm);
+      }
+
+      width: calc(var(--icn-sm) + 2em);
+      height: calc(var(--icn-sm) + 2em);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+
+      background: var(--primary-dark);
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

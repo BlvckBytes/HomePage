@@ -30,7 +30,23 @@
       }
     },
     "services": {
-      "headline": "Offered services"
+      "headline": "Offered services",
+      "frontend": {
+        "title": "Frontend development",
+        "text": "You already have a finished design and now need to translate it to a fully responsive, interactive and well-maintainable web-app?"
+      },
+      "backend": {
+        "title": "Backend development",
+        "text": "Need persistent data, users, permissions, dynamic content and other creative features? I got you covered!"
+      },
+      "ui-ux": {
+        "title": "UI/UX design",
+        "text": "If there are enough predefined properties of your idea, we can work out a fully custom design using feedback to create iterations."
+      },
+      "hosting": {
+        "title": "Hosting And Deployment",
+        "text": "I will set up the project in a live environment and provide you with directions for further maintaining, if desired."
+      }
     },
     "skills": {
       "headline": "Acquired skills"

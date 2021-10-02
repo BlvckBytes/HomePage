@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="51.801" height="31.226" viewBox="0 0 51.801 31.226">
+  <g id="Group_37" data-name="Group 37" transform="translate(-227.331 -2441.672)">
+    <g id="Group_35" data-name="Group 35" transform="translate(229.452 2446.037)">
+      <line id="Line_4" data-name="Line 4" x1="14.346" transform="translate(0 10.144) rotate(45)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+      <line id="Line_5" data-name="Line 5" x1="14.346" transform="translate(0 10.144) rotate(-45)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+    </g>
+    <line id="Line_6" data-name="Line 6" x1="10.038" y2="27.376" transform="translate(248.212 2443.596)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+    <g id="Group_36" data-name="Group 36" transform="translate(277.01 2467.428) rotate(180)">
+      <line id="Line_4-2" data-name="Line 4" x1="14.346" transform="translate(0 10.144) rotate(45)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+      <line id="Line_5-2" data-name="Line 5" x1="14.346" transform="translate(0 10.144) rotate(-45)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

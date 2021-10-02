@@ -3,10 +3,7 @@
 .about {
 
   &__columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 20em);
-      justify-content: center;
-      gap: clamp(2.5em, 5vw, 4em);
+    @include grid-columns(3, clamp(2.5em, 5vw, 4em), 25em, 20em, 15em);
   }
 
   &__item {
