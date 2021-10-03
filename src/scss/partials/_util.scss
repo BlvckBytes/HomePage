@@ -3,6 +3,8 @@
 
 @use 'sass:map';
 @use 'sass:color';
+@use 'sass:string';
+@use 'sass:math';
 
 @forward 'config';
 
@@ -10,6 +12,7 @@
 /// next to the native value itself
 /// @param {Number} $delta [5%] Amount to lighten/darken colors, null for none
 /// @param {Number} $opac [0.5] Opacity of opac values, null for none
+/// @author BlvckBytes <blvckbytes@gmail.com>
 @function buildColorMap($delta: 15%, $opac: 0.5) {
     $colors: ();
 
@@ -36,6 +39,7 @@
 /// @param {String} $breakpoint Name of known breakpoint, @see {variable} $breakpoints
 /// @param {String} $scope Scope of query, can be range | less | more | min | max
 /// @output Constructed media query with provided content
+/// @author BlvckBytes <blvckbytes@gmail.com>
 @mixin bp-style($breakpoint, $scope: range) {
     // Create media query based on width from map
     @if map-has-key($breakpoints, $breakpoint) {
@@ -94,6 +98,7 @@
 /// Convert pixels to rems
 /// @param {Number} $pixels Pixel value
 /// @return Resulting value in REMs
+/// @author BlvckBytes <blvckbytes@gmail.com>
 @function rem($pixels) {
     @return #{$pixels / $rem-value}rem;
 }
@@ -102,6 +107,7 @@
 /// @param {Number} $duration Duration of animation
 /// @param {boolean} $repeating [false] Whether to infinitely repeat
 /// @output Keyframes declaration with unique ID and it's assignment
+/// @author BlvckBytes <blvckbytes@gmail.com>
 @mixin keyframe-animation($duration, $repeating: false, $delay: 0) {
     // Generate unique name
     $name: kfa-#{unique-id()};
@@ -146,14 +152,17 @@
 }
 
 /// Applies to grid containers that need a maximum number of
-/// columns, a symmetric gap as well as item-size constraints
+/// columns, a specific axis-gap as well as item-size constraints
 /// @param {Number} $max-columns Maximum number of columns
+/// @param {Number} $col-gap Gap between columns
+/// @param {Number} $row-gap Gap between rows
 /// @param {Number} $max-item-width Size of fully expanded item
 /// @param {Number} $min-item-width Size of fully contracted item
 /// @param {Number} $min-item-width-mobile Size of min-item-width on mobile
 /// @output All grid properties and width constraints
+/// @author BlvckBytes <blvckbytes@gmail.com>
 @mixin grid-columns(
-  $max-columns, $gap, $max-item-width, $min-item-width,
+  $max-columns, $col-gap, $row-gap, $max-item-width, $min-item-width,
   $min-item-width-mobile: $min-item-width
 ) {
   // Create grid with centered cells, applying min-width
@@ -161,7 +170,8 @@
   grid-template-columns: repeat(auto-fit, minmax($min-item-width, 1fr));
   justify-content: center;
   justify-items: center;
-  gap: $gap;
+  column-gap: $col-gap;
+  row-gap: $row-gap;
 
   // Center grid container
   margin: 0px auto;
@@ -170,7 +180,7 @@
   // Max-width is all columns plus their spaces inbetween
   max-width: calc(
     #{$max-item-width} * #{$max-columns} +
-    (#{$max-columns} - 1) * #{$gap}
+    (#{$max-columns} - 1) * #{$col-gap}
   );
   
   // Items have max width
@@ -182,4 +192,95 @@
   @include bp-style(mobile) {
     grid-template-columns: repeat(auto-fit, minmax($min-item-width-mobile, 1fr));
   }
+}
+
+/// Encode a string to be used in url(), used for css-hacks
+/// @param {String} $input Input string to be encoded
+/// @return {String} URL-encoded result string
+/// @author BlvckBytes <blvckbytes@gmail.com>
+@function url-encode($input) {
+  $LUT: (
+    ' ': '%20',
+    '"': '%22',
+    '<': '%3C',
+    '>': '%3E',
+    '#': '%23',
+    '%': '%25',
+    '{': '%7B',
+    '}': '%7D',
+    '|': '%7C',
+    '\\': '%5C',
+    '^': '%5E',
+    '~': '%7E',
+    '[': '%5B',
+    ']': '%5D',
+  );
+
+  $result: '';
+  
+  // Translate chars individually
+  @for $i from 1 through str-length($input) {
+    $curr-char: str-slice($input, $i, $i);
+    $enc-char: if(map-has-key($LUT, $curr-char), map-get($LUT, $curr-char), $curr-char);
+    $result: $result + $enc-char;
+  }
+
+  @return $result;
+}
+
+/// This is a sass-translation and extension of the online-tool https://kovart.github.io/dashed-border-generator/
+/// Produces a proper dashed border with all control parameters
+/// @param {String} $color
+/// @output Applied border-radius and generated background image representing border-svg
+/// @author BlvckBytes <blvckbytes@gmail.com>
+@mixin dashed-border-bg(
+  $radius, $width: .1em, $dash-array: 30, $dash-offset: 0, $line-cap: square,
+  $color-1: #FFF, $color-2: #FFF, $color-deg: 0deg
+) {
+  @if $line-cap != 'square' and $line-cap != 'round' and $line-cap != 'butt' {
+    @error 'Unknown dash-border line-cap "#{$line-cap}", use (square, round, butt)!';
+  }
+
+  /*
+    Calculate center x and y coords of gradient vector
+    The gradient square gets inscribed in a circle, which has the
+    same diameter as the square (ratio sqrt(2)), then the resulting
+    values are capped between 0% to 100% to stay within the rectangle.
+    Angles are subtracted from 270deg and x1 and x2 are swapped, to
+    create the same behavior as a linear-gradient would have
+  */
+  $x-val: math.floor(math.cos(270deg - $color-deg) * 50% * math.sqrt(2));
+  $y-val: math.floor(math.sin(270deg - $color-deg) * 50% * math.sqrt(2));
+
+  $grad-def:
+  "<defs>" +
+    "<linearGradient id='grad' " +
+      // Set vector start (x1, y1) and end (x2, y2)
+      "x1='#{math.clamp(0%, 50% + $x-val, 100%)}' " +
+      "y1='#{math.clamp(0%, 50% - $y-val, 100%)}' " +
+      "x2='#{math.clamp(0%, 50% - $x-val, 100%)}' " +
+      "y2='#{math.clamp(0%, 50% + $y-val, 100%)}'" +
+    ">" +
+      // Vector at 0% is color-1, at 100% color-2
+      "<stop offset='0%' stop-color='#{$color-1}'/>" +
+      "<stop offset='100%' stop-color='#{$color-2}'/>" +
+    "</linearGradient>" +
+  "</defs>";
+
+  // Apply border-radius to container
+  border-radius: $radius;
+
+  // Apply generated SVG with grad-stroke and dash-properties as background
+  background-image: url(url-encode(
+    "data:image/svg+xml," +
+    "<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'>" +
+    "#{$grad-def}" +
+      "<rect " +
+        "width='100%' height='100%' fill='none' stroke='url(#grad)' " +
+        "rx='#{$radius}' ry='#{$radius}' stroke-width='#{$width}' " +
+        "stroke-dasharray='#{$dash-array}' stroke-dashoffset='#{$dash-offset}' " +
+        "stroke-linecap='#{$line-cap}" +
+      "'/>" +
+    "</svg>"
+  ));
 }

@@ -3,7 +3,7 @@
 .about {
 
   &__columns {
-    @include grid-columns(3, clamp(2.5em, 5vw, 4em), 25em, 20em, 15em);
+    @include grid-columns(3, clamp(2.5em, 5vw, 4em), 4em, 25em, 20em, 15em);
   }
 
   &__item {

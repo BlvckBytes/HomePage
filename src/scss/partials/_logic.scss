@@ -40,6 +40,7 @@
 /// @param $asc - Whether or not to sort ascending
 /// @returns A SASS map sorted by values
 /// @requires function list-remove
+/// @author BlvckBytes <blvckbytes@gmail.com>
 @function map-sort-vals($map, $asc: true) {
     $sortedMap: ();
 

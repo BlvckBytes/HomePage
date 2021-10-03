@@ -50,7 +50,7 @@
       &__content {
           position: fixed;
           width: 100vw;
-          height: calc(var(--vh) * 100 - 2.8em);
+          height: calc(var(--vh, 1vh) * 100 - 2.8em);
           right: 0;
           top: 2.8em;
           background: var(--gray);

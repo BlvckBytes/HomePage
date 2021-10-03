@@ -43,7 +43,7 @@ export const contentAnimations = (speed: number) => [
     // Fully expanded height
     state('open', style({
       display: 'flex',
-      height: 'calc(var(--vh) * 100 - 2.8em)',
+      height: 'calc(var(--vh, 1vh) * 100 - 2.8em)',
     })),
 
     // No height, not rendered
