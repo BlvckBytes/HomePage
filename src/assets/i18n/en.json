@@ -49,7 +49,91 @@
       }
     },
     "skills": {
-      "headline": "Acquired skills"
+      "headline": "Acquired skills",
+      "frontend-design": {
+        "menu": "Frontend Design",
+        "headline": "Turning ideas into a concrete design",
+        "text": "I believe that every successful project needs to be properly planned ahead, which includes designing the layout for all viewports, deciding on color-schemes, animations and interactive features.",
+        "tools": {
+          "xd": {
+            "headline": "Experience Design",
+            "text": "Create interactive designs"
+          },
+          "ps": {
+            "headline": "Photoshop",
+            "text": "Prepare assets in advance"
+          },
+          "ai": {
+            "headline": "Illustrator",
+            "text": "Design perfectly matching icons"
+          }
+        }
+      },
+      "frontend-development": {
+        "menu": "Frontend Development",
+        "headline": "Turning concrete designs into working apps",
+        "text": "This is where the magic happens! Once we agree on a design, I can implement it as a fully responsive, interactive and cross-device working application, providing all frontend functionality.",
+        "tools": {
+          "angular": {
+            "headline": "Angular",
+            "text": "Interactive components"
+          },
+          "scss": {
+            "headline": "SCSS",
+            "text": "Powerful and organized styles"
+          },
+          "i18n": {
+            "headline": "i18n",
+            "text": "Multi-Language support"
+          },
+          "eslint": {
+            "headline": "ESLint",
+            "text": "Consistent and maintainable code"
+          },
+          "rxjs": {
+            "headline": "RxJS",
+            "text": "Reactive communications"
+          }
+        }
+      },
+      "backend-development": {
+        "menu": "Backend Development",
+        "headline": "Adding astonishing functionality to your app",
+        "text": "Managing users, permissions, adding validation, having persistent models and much more… Everything is possible, thanks to this modern stack.",
+        "tools": {
+          "spring": {
+            "headline": "Spring Boot",
+            "text": "Robust and reliable framework"
+          },
+          "kotlin": {
+            "headline": "Kotlin",
+            "text": "Modern and precise language"
+          },
+          "exposed": {
+            "headline": "JetBrains Exposed",
+            "text": "Most powerful ORM out there"
+          },
+          "jwt": {
+            "headline": "JWTs",
+            "text": "Secure and distributed auth"
+          }
+        }
+      },
+      "deployment": {
+        "menu": "Deployment",
+        "headline": "Launching the finished product into the web",
+        "text": "It’s time to let the world interact with your shiny new product, provide extremely high availability and keep scalability in mind!",
+        "tools": {
+          "docker": {
+            "headline": "Docker",
+            "text": "All dependencies packaged"
+          },
+          "kubernetes": {
+            "headline": "Kubernetes",
+            "text": "Orchestrating containers efficiently"
+          }
+        }
+      }
     },
     "contact": {
       "headline": "Get in touch"

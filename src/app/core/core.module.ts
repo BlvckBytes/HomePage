@@ -4,9 +4,12 @@ import { EnsureImportedOnceModule } from './ensure-import-once.model';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BreakpointDetectorComponent } from './component/breakpoint-detector/breakpoint-detector.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BreakpointDetectorComponent,
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -20,6 +23,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   ],
   exports: [
     TranslatePipe,
+    BreakpointDetectorComponent,
   ],
 })
 export class CoreModule extends EnsureImportedOnceModule {

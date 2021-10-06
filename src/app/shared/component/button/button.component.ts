@@ -23,9 +23,7 @@ export class ButtonComponent {
   @HostListener('click')
   onClick() {
     if (!this.url) return;
-
-    console.log(this.url);
-
+    
     if (this.url.startsWith('http'))
       window.open(this.url, '_blank');
 

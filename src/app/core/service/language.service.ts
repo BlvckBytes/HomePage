@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { TranslationLanguageModel } from '@bbd/core';
 import { TranslateService } from '@ngx-translate/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class LanguageService {
 
   private languages: TranslationLanguageModel[];

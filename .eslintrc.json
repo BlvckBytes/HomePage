@@ -45,6 +45,17 @@
           {
             "exceptAfterSingleLine": true
           }
+        ],
+        "@typescript-eslint/quotes": [
+          "error",
+          "single",
+          {
+            "allowTemplateLiterals": true
+          }
+        ],
+        "@typescript-eslint/brace-style": [
+          "error",
+          "stroustrup"
         ]
       }
     },

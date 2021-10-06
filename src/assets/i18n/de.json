@@ -49,7 +49,91 @@
       }
     },
     "skills": {
-      "headline": "Fähigkeiten"
+      "headline": "Fähigkeiten",
+      "frontend-design": {
+        "menu": "Frontend Design",
+        "headline": "Ideen werden zu konkreten Designs verwandelt",
+        "text": "Jedes erfolgreiche Projekt muss ordnungsgemäß vorausgeplant werden, was auch das layout für alle Geräte, Farbschemen, Animationen sowie interaktive Features miteinschließt.",
+        "tools": {
+          "xd": {
+            "headline": "Experience Design",
+            "text": "Interaktive Designs erstellen"
+          },
+          "ps": {
+            "headline": "Photoshop",
+            "text": "Grafiken vorbereiten"
+          },
+          "ai": {
+            "headline": "Illustrator",
+            "text": "Passende Symbole erstellen"
+          }
+        }
+      },
+      "frontend-development": {
+        "menu": "Frontend Entwicklung",
+        "headline": "Konkrete Designs als interaktive Apps umsetzen",
+        "text": "Hier passiert die wahre Magie! Sobald ein Design von beiden Seiten besiegelt wurde, kann ich es als vollig responsive, interaktive und plattformunabhängige App umsetzen und jegliche frontend-Funktionalität implementieren.",
+        "tools": {
+          "angular": {
+            "headline": "Angular",
+            "text": "Interaktive Komponenten"
+          },
+          "scss": {
+            "headline": "SCSS",
+            "text": "Mächtige und organisierte Styles"
+          },
+          "i18n": {
+            "headline": "i18n",
+            "text": "Mehrsprachen-Funktionalität"
+          },
+          "eslint": {
+            "headline": "ESLint",
+            "text": "Konsistenter und wartbarer Code"
+          },
+          "rxjs": {
+            "headline": "RxJS",
+            "text": "Reaktive Kommunikation"
+          }
+        }
+      },
+      "backend-development": {
+        "menu": "Backend Entwicklung",
+        "headline": "Hinzufügen umwerfender Funktionalitäten zu Ihrer App",
+        "text": "Benutzerverwaltung, Rechtesysteme, Validierungen, persistente Modelle und vieles mehr... Alles ist möglich, dank dem modernen Stack.",
+        "tools": {
+          "spring": {
+            "headline": "Spring Boot",
+            "text": "Robustes und zuverlässiges Framework"
+          },
+          "kotlin": {
+            "headline": "Kotlin",
+            "text": "Moderne und aussagekräftige Sprache"
+          },
+          "exposed": {
+            "headline": "JetBrains Exposed",
+            "text": "Mächtigstes ORM am Markt"
+          },
+          "jwt": {
+            "headline": "JWTs",
+            "text": "Sichere und verteilte Auth"
+          }
+        }
+      },
+      "deployment": {
+        "menu": "Deployment",
+        "headline": "Das fertige Produkt ins Web bringen",
+        "text": "Es ist an der Zeit, die Welt mit Ihrem gänzenden, neuen Produkt interagieren zu lassen, während hohe Verfügbarkeit und Skalierbarkeit garantiert sind!",
+        "tools": {
+          "docker": {
+            "headline": "Docker",
+            "text": "Alle Abhängigkeiten eingebunden"
+          },
+          "kubernetes": {
+            "headline": "Kubernetes",
+            "text": "Effiziente Container-Verwaltung"
+          }
+        }
+      }
     },
     "contact": {
       "headline": "Kontaktaufnahme"

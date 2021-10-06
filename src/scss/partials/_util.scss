@@ -140,9 +140,21 @@
 
     // Render all bp-dependent vars
     @each $breakpoint, $size in $breakpoints {
+        // Default detector is hidden
+        .bp__#{$breakpoint}--active {
+          display: none;
+        }
+        
         @include bp-style($breakpoint) {
             @each $name, $value in map-get($var-states, $breakpoint) {
                 --#{$name}: #{$value};
+            }
+
+            @debug '.bp__#{$breakpoint}--active';
+
+            // Change detector to active (visible)
+            .bp__#{$breakpoint}--active {
+              display: block;
             }
         }
     }

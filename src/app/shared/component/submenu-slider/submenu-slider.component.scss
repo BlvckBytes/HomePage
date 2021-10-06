@@ -1,0 +1,129 @@
+@use "util" as *;
+
+:host {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  gap: clamp(4rem, 5vw, 10rem);
+
+  // Move slider to the top, column layout now
+  @include bp-style(tablet, max) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.slider {
+  text-align: left;
+  position: relative;
+  padding-left: 2rem;
+  isolation: isolate;
+  height: max-content;
+
+  // Menu titles next to slider
+  &__title {
+    padding: 1.1em 0;
+    color: var(--white);
+    user-select: none;
+
+    // Force one word per column
+    word-spacing: 100vh;
+    max-height: min-content;
+    max-width: min-content;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    // Activated title
+    &--active {
+      color: var(--highlight);
+    }
+  }
+
+  &::before,
+  &__handle {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 0.2em;
+    border-radius: 0.2em;
+  }
+
+  // Slider guide
+  &::before {
+    content: "";
+    height: 100%;
+    background: var(--gray-dark);
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  // Slider handle
+  &__handle {
+    height: 3rem;
+    z-index: 2;
+    background: var(--highlight);
+    transition: transform 100ms ease;
+  }
+
+  // Change to row layout for titles
+  @include bp-style(tablet, max) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0 0 0;
+    width: 90%;
+
+    // "Rotate" guide
+    &::before {
+      translate: none;
+      width: 90%;
+      height: 0.2em;
+      transform: translateX(-50%);
+      top: 0;
+      left: 50%;
+    }
+
+    // "Rotate" handle
+    &__handle {
+      width: 3rem;
+      height: 0.2em;
+    }
+
+    &__title {
+      text-align: center;
+
+      // Re-apply padding
+      padding: 1.1em 0 0 0 !important;
+    }
+  }
+
+  @include bp-style(mobile) {
+    padding-top: 1rem;
+
+    // Center text columns
+    &__title {
+      align-items: flex-start;
+      flex-direction: row;
+
+      text-align: left;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      letter-spacing: -0.2em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// Container of individual submenu contents
+.content {
+  flex: 1;
+  max-width: 750px;
+  position: relative;
+}

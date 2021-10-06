@@ -1,0 +1,21 @@
+<!-- Selection of submenus based on title -->
+<div class="slider" #sliderGuide>
+  <!-- Illuminated slider -->
+  <span class="slider__handle" [style.transform]="sliderTransform"></span>
+  
+  <!-- Submenu title -->
+  <h3
+    #sliderTitle
+    class="slider__title"
+    *ngFor="let title of titles"
+    [class.slider__title--active]="title.state"
+    (click)="menuChoose(title);"
+  >
+    {{ title.owner.i18nTitle! | translate }}
+  </h3>
+</div>
+
+<!-- Submenu content elements -->
+<div class="content">
+  <ng-content></ng-content>
+</div>

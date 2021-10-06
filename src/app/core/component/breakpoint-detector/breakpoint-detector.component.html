@@ -1,0 +1,6 @@
+<!-- Detector divs, one for every breakpoint -->
+<div
+  #detector
+  *ngFor="let bpc of bpClasses | keyvalue"
+  class="{{bpc.key}}"
+></div>
