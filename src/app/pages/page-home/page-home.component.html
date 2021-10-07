@@ -9,15 +9,15 @@
             <div class="hero__typeblock__buttons">
                 <app-button
                     url="#contact"
-                    text="{{ 'home.hero.btn-contact' | translate }}"
-                ></app-button>
+                    text="{{ 'home.hero.btn-contact' | translate }}">
+                </app-button>
 
                 <app-button
                     url="#services"
                     text="{{ 'home.hero.btn-services' | translate }}"
                     icon="wrench"
-                    [filled]="false"
-                ></app-button>
+                    [filled]="false">
+                </app-button>
             </div>
         </div>
 
@@ -105,13 +105,13 @@
                         <h3>{{ 'home.skills.frontend-design.tools.xd.headline' | translate }}</h3>
                         <p>{{ 'home.skills.frontend-design.tools.xd.text' | translate }}</p>
                     </div>
-    
+
                     <div class="skills__tool">
                         <img src="graphics/ps.svg" alt="ps">
                         <h3>{{ 'home.skills.frontend-design.tools.ps.headline' | translate }}</h3>
                         <p>{{ 'home.skills.frontend-design.tools.ps.text' | translate }}</p>
                     </div>
-    
+
                     <div class="skills__tool">
                         <img src="graphics/ai.svg" alt="ai">
                         <h3>{{ 'home.skills.frontend-design.tools.ai.headline' | translate }}</h3>
@@ -131,19 +131,19 @@
                         <h3>{{ 'home.skills.frontend-development.tools.angular.headline' | translate }}</h3>
                         <p>{{ 'home.skills.frontend-development.tools.angular.text' | translate }}</p>
                     </div>
-    
+
                     <div class="skills__tool">
                         <img src="graphics/scss.svg" alt="scss">
                         <h3>{{ 'home.skills.frontend-development.tools.scss.headline' | translate }}</h3>
                         <p>{{ 'home.skills.frontend-development.tools.scss.text' | translate }}</p>
                     </div>
-    
+
                     <div class="skills__tool">
                         <img src="graphics/i18n.svg" alt="i18n">
                         <h3>{{ 'home.skills.frontend-development.tools.i18n.headline' | translate }}</h3>
                         <p>{{ 'home.skills.frontend-development.tools.i18n.text' | translate }}</p>
                     </div>
-                        
+
                     <div class="skills__tool">
                         <img src="graphics/eslint.svg" alt="eslint">
                         <h3>{{ 'home.skills.frontend-development.tools.eslint.headline' | translate }}</h3>
@@ -169,19 +169,19 @@
                         <h3>{{ 'home.skills.backend-development.tools.spring.headline' | translate }}</h3>
                         <p>{{ 'home.skills.backend-development.tools.spring.text' | translate }}</p>
                     </div>
-    
+
                     <div class="skills__tool">
                         <img src="graphics/kotlin.svg" alt="kotlin">
                         <h3>{{ 'home.skills.backend-development.tools.kotlin.headline' | translate }}</h3>
                         <p>{{ 'home.skills.backend-development.tools.kotlin.text' | translate }}</p>
                     </div>
-    
+
                     <div class="skills__tool">
                         <img src="graphics/exposed.svg" alt="exposed">
                         <h3>{{ 'home.skills.backend-development.tools.exposed.headline' | translate }}</h3>
                         <p>{{ 'home.skills.backend-development.tools.exposed.text' | translate }}</p>
                     </div>
-                        
+
                     <div class="skills__tool">
                         <img src="graphics/jwt.svg" alt="jwt">
                         <h3>{{ 'home.skills.backend-development.tools.jwt.headline' | translate }}</h3>
@@ -201,7 +201,7 @@
                         <h3>{{ 'home.skills.deployment.tools.docker.headline' | translate }}</h3>
                         <p>{{ 'home.skills.deployment.tools.docker.text' | translate }}</p>
                     </div>
-    
+
                     <div class="skills__tool">
                         <img src="graphics/kubernetes.svg" alt="kubernetes">
                         <h3>{{ 'home.skills.deployment.tools.kubernetes.headline' | translate }}</h3>
@@ -214,7 +214,48 @@
 </div>
 
 <div class="section section--primary">
-    <div class="section__content" id="contact">
+    <div class="section__content contact" id="contact">
         <h2 class="section__headline">{{ 'home.contact.headline' | translate }}</h2>
+
+        <form
+            [formGroup]="contactForm"
+            (ngSubmit)="contactSubmit()"
+            class="contact__form"
+        >
+            <div class="contact__inline">
+                <app-textbox
+                    placeholder="{{ 'home.contact.form.name' | translate }} *"
+                    icon="avatar"
+                    [control]="fcName"
+                >
+                    
+                </app-textbox>
+
+                <app-textbox
+                    placeholder="{{ 'home.contact.form.email' | translate }} *"
+                    icon="mail"
+                    type="email"
+                    [control]="fcMail"
+                ></app-textbox>
+            </div>
+
+            <app-textbox
+                placeholder="{{ 'home.contact.form.subject' | translate }} *"
+                icon="tag"
+                [control]="fcSubject"
+            ></app-textbox>
+
+            <app-textbox
+                placeholder="{{ 'home.contact.form.message' | translate }} *"
+                type="textarea"
+                [control]="fcMessage"
+            ></app-textbox>
+
+            <app-button
+                [submit]="true"
+                [disabled]="!contactForm.valid"
+                text="{{ 'home.hero.btn-contact' | translate }}"
+            ></app-button>
+        </form>
     </div>
 </div>

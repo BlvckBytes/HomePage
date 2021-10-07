@@ -1,3 +1,4 @@
+<!-- Button image -->
 <img
     *ngIf="icon"
     class="icon"
@@ -5,10 +6,17 @@
     src="graphics/{{icon}}.svg"
     alt="{{icon}}"
 >
+
+<!-- Actual button text -->
 <p>{{text}}</p>
+
+<!-- Arrow next to text -->
 <img
     *ngIf="filled"
     class="arrow"
     src="graphics/arrow.svg"
     alt="arrow"
 >
+
+<!-- Invisible submit button -->
+<button *ngIf="submit && !disabled" type="submit"></button>

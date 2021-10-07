@@ -1,0 +1,39 @@
+<div class="textbox">
+  <img *ngIf="icon" class="textbox__icon" src="graphics/{{icon}}.svg" alt="{{icon}}">
+
+  <div class="textbox__wrapper">
+    <textarea
+      *ngIf="isTextarea; else lineInp"
+      [formControl]="control"
+      class="textbox__input"
+      placeholder=" "
+      [email]="type === 'email'"
+    ></textarea>
+
+    <ng-template #lineInp>
+      <input
+        [formControl]="control"
+        class="textbox__input"
+        type="{{type}}"
+        placeholder=" "
+        [email]="type === 'email'"
+      >
+    </ng-template>
+
+    <p class="textbox__placeholder">{{placeholder || 'Placeholder'}}</p>
+  </div>
+</div>
+
+<div class="errors">
+  <!-- Validation errors passed externally -->
+  <ng-content></ng-content>
+
+  <!-- Default validation errors -->
+  <p
+    *ngIf="(control.touched || control.dirty) && control.errors?.required"
+  >{{ 'forms.errors.required' | translate }}</p>
+
+  <p
+    *ngIf="(control.touched || control.dirty) && control.errors?.email"
+  >{{ 'forms.errors.email' | translate }}</p>
+</div>

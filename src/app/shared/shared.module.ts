@@ -6,6 +6,8 @@ import { ButtonComponent } from './component/button/button.component';
 import { CoreModule } from 'app/core/core.module';
 import { SubmenuSliderComponent } from './component/submenu-slider/submenu-slider.component';
 import { SubmenuContentComponent } from './component/submenu-content/submenu-content.component';
+import { TextboxComponent } from './component/textbox/textbox.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,16 +16,19 @@ import { SubmenuContentComponent } from './component/submenu-content/submenu-con
     ButtonComponent,
     SubmenuSliderComponent,
     SubmenuContentComponent,
+    TextboxComponent,
   ],
   imports: [
     CommonModule,
     CoreModule,
+    ReactiveFormsModule,
   ],
   exports: [
     NavigationComponent,
     ButtonComponent,
     SubmenuSliderComponent,
     SubmenuContentComponent,
+    TextboxComponent,
   ],
 })
 export class SharedModule {}

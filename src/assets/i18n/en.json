@@ -136,7 +136,19 @@
       }
     },
     "contact": {
-      "headline": "Get in touch"
+      "headline": "Get in touch",
+      "form": {
+        "name": "Your Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message"
+      }
+    }
+  },
+  "forms": {
+    "errors": {
+      "required": "This value is required!",
+      "email": "Invalid email provided!"
     }
   }
 }

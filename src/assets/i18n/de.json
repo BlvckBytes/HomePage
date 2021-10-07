@@ -136,7 +136,19 @@
       }
     },
     "contact": {
-      "headline": "Kontaktaufnahme"
+      "headline": "Kontaktaufnahme",
+      "form": {
+        "name": "Ihr Name",
+        "email": "E-Mail",
+        "subject": "Betreff",
+        "message": "Nachricht"
+      }
+    }
+  },
+  "forms": {
+    "errors": {
+      "required": "Feld ist erforderlich!",
+      "email": "Ungültige E-Mail!"
     }
   }
 }

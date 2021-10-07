@@ -1,0 +1,28 @@
+@use "util" as *;
+
+.contact {
+  align-items: center;
+  $spc: var(--spc-sm);
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spc;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+
+    app-button {
+      margin-top: var(--spc-xl);
+    }
+  }
+
+  &__inline {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: $spc;
+    row-gap: $spc;
+    align-items: baseline;
+  }
+}

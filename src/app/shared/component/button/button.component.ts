@@ -11,9 +11,14 @@ export class ButtonComponent {
   @Input() text = 'Button';
   @Input() icon?: string = undefined;
   @Input() url?: string = undefined;
+  @Input() submit = false;
 
   @Input()
-  @HostBinding('class.button--filled')
+  @HostBinding('class.--disabled')
+  disabled = false;
+
+  @Input()
+  @HostBinding('class.--filled')
   filled = true;
 
   constructor(

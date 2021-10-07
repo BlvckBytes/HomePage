@@ -2,7 +2,9 @@
 $main-palette: (
     primary: #4300AC,
     secondary: #59009A,
-    highlight: #00d8ff
+    highlight: #00d8ff,
+    warning: #FF5A5A,
+    success: #4CE240
 );
 
 /// Generic palette containing only black, white and shades of them
@@ -45,18 +47,18 @@ $var-states: (
         fs-p3: .6rem,
 
         // Spacings
-        spc-xs: .25em,
-        spc-sm: .5em,
-        spc-md: 1em,
-        spc-lg: 1.5em,
-        spc-xl: 2.2em,
-        spc-xxl: 2.9em,
+        spc-xs: .25rem,
+        spc-sm: .5rem,
+        spc-md: 1rem,
+        spc-lg: 1.5rem,
+        spc-xl: 2.2rem,
+        spc-xxl: 2.9rem,
 
         // Icons
-        icn-sm: 1.2em,
-        icn-md: 1.6em,
-        icn-lg: 2.5em,
-        icn-xl: 3.6em,
+        icn-sm: 1.2rem,
+        icn-md: 1.6rem,
+        icn-lg: 2.5rem,
+        icn-xl: 3.6rem,
     ),
 
     television: (),
@@ -69,10 +71,10 @@ $var-states: (
         fs-h4: .8rem,
         fs-p1: .9rem,
 
-        icn-sm: 1.1em,
-        icn-md: 1.5em,
-        icn-lg: 2.3em,
-        icn-xl: 3.5em
+        icn-sm: 1.1rem,
+        icn-md: 1.5rem,
+        icn-lg: 2.3rem,
+        icn-xl: 3.5rem
     ),
     mobile: (
         fs-h1: 1.5rem,
@@ -81,10 +83,10 @@ $var-states: (
         fs-h4: .7rem,
         fs-p1: .8rem,
 
-        icn-sm: 1em,
-        icn-md: 1.4em,
-        icn-lg: 2.2em,
-        icn-xl: 3em
+        icn-sm: 1rem,
+        icn-md: 1.4rem,
+        icn-lg: 2.2rem,
+        icn-xl: 3rem
     )
 );
 

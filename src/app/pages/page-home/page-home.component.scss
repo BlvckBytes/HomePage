@@ -1,6 +1,7 @@
-@use 'util' as *;
+@use "util" as *;
 
-@use './partial-styles/hero';
-@use './partial-styles/about';
-@use './partial-styles/services';
-@use './partial-styles/skills';
+@use "./partial-styles/hero";
+@use "./partial-styles/about";
+@use "./partial-styles/services";
+@use "./partial-styles/skills";
+@use "./partial-styles/contact";
