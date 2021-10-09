@@ -1,8 +1,34 @@
 {
-  "navigation": {
-    "tooltips": {
-      "home": "Home",
-      "projects": "Projects"
+  "links": {
+    "pages": {
+      "home": {
+        "title": "Home",
+        "sections": {
+          "landing": "Landing",
+          "about": "About Me",
+          "services": "Offered Services",
+          "skills": "Acquired Skills",
+          "contact": "Contact"
+        }
+      },
+      "projects": {
+        "title": "Projects",
+        "sections": {
+          "intro": "Introduction",
+          "sites": "Web-Sites",
+          "apps": "Web-Apps",
+          "misc": "Miscellaneous"
+        }
+      },
+      "other": {
+        "title": "Other"
+      },
+      "imprint": {
+        "title": "Imprint",
+        "sections": {
+          "imprint": "Imprint"
+        }
+      }
     }
   },
   "home": {
@@ -15,7 +41,6 @@
       "btn-services": "My Services"
     },
     "about": {
-      "headline": "About me",
       "my-life": {
         "title": "My Life",
         "text": "My name is Philip, also known as BlvckBytes. I’m {{myAge}} years old and have always been interested in all types of engineering."
@@ -30,7 +55,6 @@
       }
     },
     "services": {
-      "headline": "Offered services",
       "frontend": {
         "title": "Frontend development",
         "text": "You already have a finished design and now need to translate it to a fully responsive, interactive and well-maintainable web-app?"
@@ -49,7 +73,6 @@
       }
     },
     "skills": {
-      "headline": "Acquired skills",
       "frontend-design": {
         "menu": "Frontend Design",
         "headline": "Turning ideas into a concrete design",
@@ -70,7 +93,6 @@
         }
       },
       "frontend-development": {
-        "menu": "Frontend Development",
         "headline": "Turning concrete designs into working apps",
         "text": "This is where the magic happens! Once we agree on a design, I can implement it as a fully responsive, interactive and cross-device working application, providing all frontend functionality.",
         "tools": {
@@ -136,7 +158,6 @@
       }
     },
     "contact": {
-      "headline": "Get in touch",
       "form": {
         "name": "Your Name",
         "email": "Email",

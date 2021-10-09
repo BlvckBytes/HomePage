@@ -26,15 +26,22 @@
             <app-navigation-link 
                 (click)="toggleNav()"
                 url="/home"
-                text="{{ 'navigation.tooltips.home' | translate }}"
+                text="{{ 'links.pages.home.title' | translate }}"
                 icon="house"
             ></app-navigation-link>
 
             <app-navigation-link
                 (click)="toggleNav()"
                 url="/projects"
-                text="{{ 'navigation.tooltips.projects' | translate }}"
+                text="{{ 'links.pages.projects.title' | translate }}"
                 icon="bulb"
+            ></app-navigation-link>
+
+            <app-navigation-link
+                (click)="toggleNav()"
+                url="/imprint"
+                text="{{ 'links.pages.imprint.title' | translate }}"
+                icon="location"
             ></app-navigation-link>
 
             <!-- Language select -->

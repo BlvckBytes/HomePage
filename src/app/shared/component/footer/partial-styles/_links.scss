@@ -1,0 +1,74 @@
+@use 'util' as *;
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 130px);
+  gap: var(--spc-xxl);
+
+  &__inline {
+    display: flex;
+    padding: var(--spc-md) 0;
+    align-items: center;
+
+    & > * {
+      // Space icons out
+      margin-right: var(--spc-sm);
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    img {
+      display: block;
+      filter: $iconFilterDefault;
+    }
+  }
+
+  &__block, &__inline {
+    // Hover color for icons and text
+    @include bp-style(laptop, min) {
+      a {
+        transition: color 100ms ease;
+        &:hover {
+          color: var(--highlight);
+        }
+      }
+
+      img {
+        transition: filter 100ms ease;
+        &:hover {
+          filter: $iconFilterHighlight;
+        }
+      }
+    }
+  }
+
+  // Blocks are now centered
+  @include bp-style(tablet, max) {
+    &__block, &__inline {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  &__block {
+    min-width: max-content;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin-bottom: var(--spc-md);
+    }
+
+    & > a {
+      color: white;
+      text-decoration: none;
+
+      // Space out links
+      margin-bottom: var(--spc-sm);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

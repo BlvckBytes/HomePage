@@ -1,5 +1,5 @@
 <div class="section section--gradient section--hero">
-    <div class="section__content">
+    <div class="section__content" id="landing">
         <div class="hero__typeblock">
             <h1>{{ 'home.hero.headline-first' | translate }}<br>{{ 'home.hero.headline-second' | translate }}</h1>
             <h3>{{ 'home.hero.subheadline' | translate }}</h3>
@@ -32,7 +32,7 @@
 
 <div class="section section--dark">
     <div class="section__content">
-        <h2 class="section__headline">{{ 'home.about.headline' | translate }}</h2>
+        <h2 class="section__headline" id="about">{{ 'links.pages.home.sections.about' | translate }}</h2>
         <div class="about__columns">
             <div class="about__item">
                 <img src="graphics/avatar.svg" alt="avatar">
@@ -55,7 +55,7 @@
 
 <div class="section section--primary">
     <div class="section__content">
-        <h2 class="section__headline" id="services">{{ 'home.services.headline' | translate }}</h2>
+        <h2 class="section__headline" id="services">{{ 'links.pages.home.sections.services' | translate }}</h2>
         <div class="services__columns">
             <div class="services__item">
                 <div class="services__item__image">
@@ -91,7 +91,7 @@
 
 <div class="section section--dark">
     <div class="section__content">
-        <h2 class="section__headline">{{ 'home.skills.headline' | translate }}</h2>
+        <h2 class="section__headline" id="skills">{{ 'links.pages.home.sections.skills' | translate }}</h2>
         <app-submenu-slider>
 
             <!-- Frontend Design -->
@@ -215,7 +215,7 @@
 
 <div class="section section--primary">
     <div class="section__content contact" id="contact">
-        <h2 class="section__headline">{{ 'home.contact.headline' | translate }}</h2>
+        <h2 class="section__headline">{{ 'links.pages.home.sections.contact' | translate }}</h2>
 
         <form
             [formGroup]="contactForm"
@@ -228,7 +228,7 @@
                     icon="avatar"
                     [control]="fcName"
                 >
-                    
+
                 </app-textbox>
 
                 <app-textbox

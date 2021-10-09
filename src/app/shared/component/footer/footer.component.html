@@ -1,0 +1,73 @@
+<!-- Container watermark letters -->
+<div class="watermark">
+  <span *ngFor="let letter of 'blvckbytes.dev'.split('')">{{letter}}</span>
+</div>
+
+<!-- Container above watermark -->
+<div class="content">
+
+  <!-- Left hand side -->
+  <div class="content__left">
+    <div class="copyright">
+      <div class="copyright__logo">
+        <img src="graphics/logo.svg" alt="logo">
+        <h3>blvckbytes.dev</h3>
+      </div>
+      <div class="copyright__text">
+        <p>&copy; Copyright {{currYear}}, Philip Hell (BlvckBytes)</p>
+      </div>
+    </div>
+    
+    <div class="langs">
+      <!-- Render all known languages -->
+      <div
+          (click)="langService.chooseLanguage(language.internalName);"
+          class="langs__entry" 
+          *ngFor="let language of langService.listLanguages()"
+          [class.langs__entry--active]="language.isActive"
+      >
+        <img class="langs__entry__img" src="graphics/flag-{{language.internalName}}.svg" alt="flag">
+        <p class="langs__entry__description">{{language.displayName}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right hand side -->
+  <!-- Links -->
+  <div class="links content__right">
+
+    <!-- Home link-block -->
+    <div class="links__block">
+      <h3>{{ 'links.pages.home.title' | translate }}</h3>
+      <a href="/home#landing">{{ 'links.pages.home.sections.landing' | translate }}</a>
+      <a href="/home#about">{{ 'links.pages.home.sections.about' | translate }}</a>
+      <a href="/home#services">{{ 'links.pages.home.sections.services' | translate }}</a>
+      <a href="/home#skills">{{ 'links.pages.home.sections.skills' | translate }}</a>
+      <a href="/home#contact">{{ 'links.pages.home.sections.contact' | translate }}</a>
+    </div>
+
+    <!-- Projects link-block -->
+    <div class="links__block">
+      <h3>{{ 'links.pages.projects.title' | translate }}</h3>
+      <a href="/projects#intro">{{ 'links.pages.projects.sections.intro' | translate }}</a>
+      <a href="/projects#sites">{{ 'links.pages.projects.sections.sites' | translate }}</a>
+      <a href="/projects#apps">{{ 'links.pages.projects.sections.apps' | translate }}</a>
+      <a href="/projects#misc">{{ 'links.pages.projects.sections.misc' | translate }}</a>
+    </div>
+
+    <!-- Other link-block -->
+    <div class="links__block">
+      <h3>{{ 'links.pages.other.title' | translate }}</h3>
+      <a href="/imprint">{{ 'links.pages.imprint.sections.imprint' | translate }}</a>
+      <div class="links__inline">
+        <a href="https://github.com/blvckbytes" target="blank">
+          <img src="graphics/github.svg" alt="github">
+        </a>
+
+        <a href="https://www.instagram.com/blvckbytes_dev/" target="blank">
+          <img src="graphics/instagram.svg" alt="instagram">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

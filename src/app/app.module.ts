@@ -9,12 +9,14 @@ import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageProjectsComponent } from './pages/page-projects/page-projects.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageImprintComponent } from './pages/page-imprint/page-imprint.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageHomeComponent,
     PageProjectsComponent,
+    PageImprintComponent,
   ],
   imports: [
     BrowserModule,

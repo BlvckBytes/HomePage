@@ -2,6 +2,7 @@
 $main-palette: (
     primary: #4300AC,
     secondary: #59009A,
+    tertiary: #180D52,
     highlight: #00d8ff,
     warning: #FF5A5A,
     success: #4CE240
@@ -57,7 +58,7 @@ $var-states: (
         // Icons
         icn-sm: 1.2rem,
         icn-md: 1.6rem,
-        icn-lg: 2.5rem,
+        icn-lg: 2.3rem,
         icn-xl: 3.6rem,
     ),
 
@@ -73,7 +74,7 @@ $var-states: (
 
         icn-sm: 1.1rem,
         icn-md: 1.5rem,
-        icn-lg: 2.3rem,
+        icn-lg: 2.1rem,
         icn-xl: 3.5rem
     ),
     mobile: (
@@ -85,7 +86,7 @@ $var-states: (
 
         icn-sm: 1rem,
         icn-md: 1.4rem,
-        icn-lg: 2.2rem,
+        icn-lg: 2rem,
         icn-xl: 3rem
     )
 );

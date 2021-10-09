@@ -8,6 +8,7 @@ import { SubmenuSliderComponent } from './component/submenu-slider/submenu-slide
 import { SubmenuContentComponent } from './component/submenu-content/submenu-content.component';
 import { TextboxComponent } from './component/textbox/textbox.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SubmenuSliderComponent,
     SubmenuContentComponent,
     TextboxComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SubmenuSliderComponent,
     SubmenuContentComponent,
     TextboxComponent,
+    FooterComponent,
   ],
 })
 export class SharedModule {}

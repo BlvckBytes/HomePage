@@ -1,0 +1,31 @@
+@use 'util' as *;
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8em;
+
+  @include bp-style(tablet, max) {
+    align-items: center;
+    text-align: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+      margin-left: var(--spc-md);
+    }
+
+    img {
+      width: var(--icn-lg);
+      box-sizing: content-box;
+      background: var(--gray-dark);
+      border-radius: .5em;
+      padding: 0 var(--spc-sm);
+    }
+  }
+}

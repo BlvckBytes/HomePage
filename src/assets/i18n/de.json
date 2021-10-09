@@ -1,8 +1,34 @@
 {
-  "navigation": {
-    "tooltips": {
-      "home": "Start",
-      "projects": "Projekte"
+  "links": {
+    "pages": {
+      "home": {
+        "title": "Start",
+        "sections": {
+          "landing": "Willkommen",
+          "about": "Über Mich",
+          "services": "Dienstleistungen",
+          "skills": "Fähigkeiten",
+          "contact": "Kontakt"
+        }
+      },
+      "projects": {
+        "title": "Projekte",
+        "sections": {
+          "intro": "Einleitung",
+          "sites": "Web-Seiten",
+          "apps": "Web-Apps",
+          "misc": "Verschiedenes"
+        }
+      },
+      "other": {
+        "title": "Sonstiges"
+      },
+      "imprint": {
+        "title": "Impressum",
+        "sections": {
+          "imprint": "Impressum"
+        }
+      }
     }
   },
   "home": {
@@ -15,7 +41,6 @@
       "btn-services": "Dienstleistungen"
     },
     "about": {
-      "headline": "Über mich",
       "my-life": {
         "title": "Mein Leben",
         "text": "Mein Name ist Philip, auch als BlvckBytes bekannt. Ich bin {{myAge}} Jahre alt und war seit ich denken kann an verschiedenster Technologie interessiert."
@@ -49,7 +74,6 @@
       }
     },
     "skills": {
-      "headline": "Fähigkeiten",
       "frontend-design": {
         "menu": "Frontend Design",
         "headline": "Ideen werden zu konkreten Designs verwandelt",
@@ -136,7 +160,6 @@
       }
     },
     "contact": {
-      "headline": "Kontaktaufnahme",
       "form": {
         "name": "Ihr Name",
         "email": "E-Mail",

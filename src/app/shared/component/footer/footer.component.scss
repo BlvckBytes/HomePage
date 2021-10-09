@@ -1,0 +1,68 @@
+@use 'util' as *;
+
+@use 'partial-styles/watermark';
+@use 'partial-styles/copyright';
+@use 'partial-styles/languages';
+@use 'partial-styles/links';
+
+:host {
+  background: var(--tertiary);
+  color: var(--white);
+  display: block;
+  position: relative;
+  min-height: 10em;
+
+  // Top spacing => ::before, bottom is padding
+  padding-bottom: 1.5rem;
+
+  &, &::before {
+    background: var(--tertiary);
+  }
+
+  // Rounded corners shifted above container
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+    width: 100%;
+    height: 3em;
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    z-index: 3;
+  }
+}
+
+// Create row layout of inner columns
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--spc-lg) var(--spc-xxl);
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    flex-shrink: 0;
+  }
+
+  &__right {
+    padding-left: clamp(3rem, 8vw, 6rem);
+    flex-grow: 1;
+  }
+
+  // Change to separate rows on tablet
+  @include bp-style(tablet, max) {
+    flex-direction: column;
+    align-items: center;
+
+    // Change space from left to top
+    &__right {
+      justify-content: center;
+      width: 100%;
+      padding-left: 0;
+      padding-top: var(--spc-xxl);
+    }
+  }
+}
