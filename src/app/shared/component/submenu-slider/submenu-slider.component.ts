@@ -64,6 +64,8 @@ export class SubmenuSliderComponent implements AfterViewChecked, AfterContentIni
     const clickedBox = title.element!.nativeElement.getBoundingClientRect();
     const vert = sliderBox.width < sliderBox.height;
 
+    console.log(sliderBox);
+
     // Vertical movement
     if (vert) {
       // Get computed height without padding and padding top

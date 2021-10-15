@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Optional } from '@angular/core';
 import { LanguageService } from '@bbd/core';
 import { burgerAnimations, contentAnimations } from './navigation.animations';
 
@@ -18,7 +18,7 @@ export class NavigationComponent {
   isNavOpen = false;
 
   constructor(
-    public langService: LanguageService,
+    @Optional() public langService: LanguageService,
   ) {}
 
   toggleNav() {

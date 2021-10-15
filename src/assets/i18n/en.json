@@ -93,6 +93,7 @@
         }
       },
       "frontend-development": {
+        "menu": "Frontend Developmen",
         "headline": "Turning concrete designs into working apps",
         "text": "This is where the magic happens! Once we agree on a design, I can implement it as a fully responsive, interactive and cross-device working application, providing all frontend functionality.",
         "tools": {
