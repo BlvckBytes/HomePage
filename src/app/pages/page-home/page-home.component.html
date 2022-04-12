@@ -13,8 +13,8 @@
                 </app-button>
 
                 <app-button
-                    url="#services"
-                    text="{{ 'home.hero.btn-services' | translate }}"
+                    url="#technologies"
+                    text="{{ 'home.hero.btn-technologies' | translate }}"
                     icon="wrench"
                     [filled]="false">
                 </app-button>
@@ -55,35 +55,35 @@
 
 <div class="section section--primary">
     <div class="section__content">
-        <h2 class="section__headline" id="services">{{ 'links.pages.home.sections.services' | translate }}</h2>
-        <div class="services__columns">
-            <div class="services__item">
-                <div class="services__item__image">
+        <h2 class="section__headline" id="skills">{{ 'links.pages.home.sections.skills' | translate }}</h2>
+        <div class="skills__columns">
+            <div class="skills__item">
+                <div class="skills__item__image">
                     <img src="graphics/html.svg" alt="html">
                 </div>
-                <h3>{{ 'home.services.frontend.title' | translate }}</h3>
-                <p>{{ 'home.services.frontend.text' | translate }}</p>
+                <h3>{{ 'home.skills.frontend.title' | translate }}</h3>
+                <p>{{ 'home.skills.frontend.text' | translate }}</p>
             </div>
-            <div class="services__item">
-                <div class="services__item__image">
+            <div class="skills__item">
+                <div class="skills__item__image">
                     <img src="graphics/gears.svg" alt="gears">
                 </div>
-                <h3>{{ 'home.services.backend.title' | translate }}</h3>
-                <p>{{ 'home.services.backend.text' | translate }}</p>
+                <h3>{{ 'home.skills.backend.title' | translate }}</h3>
+                <p>{{ 'home.skills.backend.text' | translate }}</p>
             </div>
-            <div class="services__item">
-                <div class="services__item__image">
+            <div class="skills__item">
+                <div class="skills__item__image">
                     <img src="graphics/brush.svg" alt="brush">
                 </div>
-                <h3>{{ 'home.services.ui-ux.title' | translate }}</h3>
-                <p>{{ 'home.services.ui-ux.text' | translate }}</p>
+                <h3>{{ 'home.skills.ui-ux.title' | translate }}</h3>
+                <p>{{ 'home.skills.ui-ux.text' | translate }}</p>
             </div>
-            <div class="services__item">
-                <div class="services__item__image">
+            <div class="skills__item">
+                <div class="skills__item__image">
                     <img src="graphics/database.svg" alt="database">
                 </div>
-                <h3>{{ 'home.services.hosting.title' | translate }}</h3>
-                <p>{{ 'home.services.hosting.text' | translate }}</p>
+                <h3>{{ 'home.skills.hosting.title' | translate }}</h3>
+                <p>{{ 'home.skills.hosting.text' | translate }}</p>
             </div>
         </div>
     </div>
@@ -91,121 +91,115 @@
 
 <div class="section section--dark">
     <div class="section__content">
-        <h2 class="section__headline" id="skills">{{ 'links.pages.home.sections.skills' | translate }}</h2>
+        <h2 class="section__headline" id="technologies">{{ 'links.pages.home.sections.technologies' | translate }}</h2>
         <app-submenu-slider>
 
             <!-- Frontend Design -->
-            <app-submenu-content i18nTitle="home.skills.frontend-design.menu">
-                <h2>{{ 'home.skills.frontend-design.headline' | translate }}</h2>
-                <p>{{ 'home.skills.frontend-design.text' | translate }}</p>
+            <app-submenu-content i18nTitle="home.technologies.frontend-design.menu">
+                <h2>{{ 'home.technologies.frontend-design.headline' | translate }}</h2>
+                <p>{{ 'home.technologies.frontend-design.text' | translate }}</p>
 
-                <div class="skills">
-                    <div class="skills__tool">
+                <div class="technologies">
+                    <div class="technologies__tool">
                         <img src="graphics/xd.svg" alt="xd">
-                        <h3>{{ 'home.skills.frontend-design.tools.xd.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.frontend-design.tools.xd.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.frontend-design.tools.xd.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.frontend-design.tools.xd.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
+                    <div class="technologies__tool">
                         <img src="graphics/ps.svg" alt="ps">
-                        <h3>{{ 'home.skills.frontend-design.tools.ps.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.frontend-design.tools.ps.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.frontend-design.tools.ps.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.frontend-design.tools.ps.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
+                    <div class="technologies__tool">
                         <img src="graphics/ai.svg" alt="ai">
-                        <h3>{{ 'home.skills.frontend-design.tools.ai.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.frontend-design.tools.ai.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.frontend-design.tools.ai.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.frontend-design.tools.ai.text' | translate }}</p>
                     </div>
                 </div>
             </app-submenu-content>
 
             <!-- Frontend Development -->
-            <app-submenu-content i18nTitle="home.skills.frontend-development.menu">
-                <h2>{{ 'home.skills.frontend-development.headline' | translate }}</h2>
-                <p>{{ 'home.skills.frontend-development.text' | translate }}</p>
+            <app-submenu-content i18nTitle="home.technologies.frontend-development.menu">
+                <h2>{{ 'home.technologies.frontend-development.headline' | translate }}</h2>
+                <p>{{ 'home.technologies.frontend-development.text' | translate }}</p>
 
-                <div class="skills">
-                    <div class="skills__tool">
+                <div class="technologies">
+                    <div class="technologies__tool">
                         <img src="graphics/angular.svg" alt="angular">
-                        <h3>{{ 'home.skills.frontend-development.tools.angular.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.frontend-development.tools.angular.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.frontend-development.tools.angular.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.frontend-development.tools.angular.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
+                    <div class="technologies__tool">
                         <img src="graphics/scss.svg" alt="scss">
-                        <h3>{{ 'home.skills.frontend-development.tools.scss.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.frontend-development.tools.scss.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.frontend-development.tools.scss.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.frontend-development.tools.scss.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
+                    <div class="technologies__tool">
                         <img src="graphics/i18n.svg" alt="i18n">
-                        <h3>{{ 'home.skills.frontend-development.tools.i18n.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.frontend-development.tools.i18n.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.frontend-development.tools.i18n.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.frontend-development.tools.i18n.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
+                    <div class="technologies__tool">
                         <img src="graphics/eslint.svg" alt="eslint">
-                        <h3>{{ 'home.skills.frontend-development.tools.eslint.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.frontend-development.tools.eslint.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.frontend-development.tools.eslint.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.frontend-development.tools.eslint.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
+                    <div class="technologies__tool">
                         <img src="graphics/rxjs.svg" alt="rxjs">
-                        <h3>{{ 'home.skills.frontend-development.tools.rxjs.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.frontend-development.tools.rxjs.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.frontend-development.tools.rxjs.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.frontend-development.tools.rxjs.text' | translate }}</p>
                     </div>
                 </div>
             </app-submenu-content>
 
             <!-- Backend Development -->
-            <app-submenu-content i18nTitle="home.skills.backend-development.menu">
-                <h2>{{ 'home.skills.backend-development.headline' | translate }}</h2>
-                <p>{{ 'home.skills.backend-development.text' | translate }}</p>
+            <app-submenu-content i18nTitle="home.technologies.backend-development.menu">
+                <h2>{{ 'home.technologies.backend-development.headline' | translate }}</h2>
+                <p>{{ 'home.technologies.backend-development.text' | translate }}</p>
 
-                <div class="skills">
-                    <div class="skills__tool">
-                        <img src="graphics/spring.svg" alt="spring">
-                        <h3>{{ 'home.skills.backend-development.tools.spring.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.backend-development.tools.spring.text' | translate }}</p>
+                <div class="technologies">
+                    <div class="technologies__tool">
+                        <img src="graphics/nestjs.svg" alt="nestjs">
+                        <h3>{{ 'home.technologies.backend-development.tools.nestjs.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.backend-development.tools.nestjs.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
-                        <img src="graphics/kotlin.svg" alt="kotlin">
-                        <h3>{{ 'home.skills.backend-development.tools.kotlin.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.backend-development.tools.kotlin.text' | translate }}</p>
+                    <div class="technologies__tool">
+                        <img src="graphics/typeorm.png" alt="typeorm">
+                        <h3>{{ 'home.technologies.backend-development.tools.typeorm.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.backend-development.tools.typeorm.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
-                        <img src="graphics/exposed.svg" alt="exposed">
-                        <h3>{{ 'home.skills.backend-development.tools.exposed.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.backend-development.tools.exposed.text' | translate }}</p>
-                    </div>
-
-                    <div class="skills__tool">
+                    <div class="technologies__tool">
                         <img src="graphics/jwt.svg" alt="jwt">
-                        <h3>{{ 'home.skills.backend-development.tools.jwt.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.backend-development.tools.jwt.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.backend-development.tools.jwt.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.backend-development.tools.jwt.text' | translate }}</p>
                     </div>
                 </div>
             </app-submenu-content>
 
             <!-- Deployment -->
-            <app-submenu-content i18nTitle="home.skills.deployment.menu">
-                <h2>{{ 'home.skills.deployment.headline' | translate }}</h2>
-                <p>{{ 'home.skills.deployment.text' | translate }}</p>
+            <app-submenu-content i18nTitle="home.technologies.deployment.menu">
+                <h2>{{ 'home.technologies.deployment.headline' | translate }}</h2>
+                <p>{{ 'home.technologies.deployment.text' | translate }}</p>
 
-                <div class="skills">
-                    <div class="skills__tool">
+                <div class="technologies">
+                    <div class="technologies__tool">
                         <img src="graphics/docker.svg" alt="docker">
-                        <h3>{{ 'home.skills.deployment.tools.docker.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.deployment.tools.docker.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.deployment.tools.docker.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.deployment.tools.docker.text' | translate }}</p>
                     </div>
 
-                    <div class="skills__tool">
+                    <div class="technologies__tool">
                         <img src="graphics/kubernetes.svg" alt="kubernetes">
-                        <h3>{{ 'home.skills.deployment.tools.kubernetes.headline' | translate }}</h3>
-                        <p>{{ 'home.skills.deployment.tools.kubernetes.text' | translate }}</p>
+                        <h3>{{ 'home.technologies.deployment.tools.kubernetes.headline' | translate }}</h3>
+                        <p>{{ 'home.technologies.deployment.tools.kubernetes.text' | translate }}</p>
                     </div>
                 </div>
             </app-submenu-content>

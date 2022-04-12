@@ -6,8 +6,8 @@
         "sections": {
           "landing": "Willkommen",
           "about": "Über Mich",
-          "services": "Dienstleistungen",
           "skills": "Fähigkeiten",
+          "technologies": "Technologien",
           "contact": "Kontakt"
         }
       },
@@ -38,7 +38,7 @@
       "subheadline": "Entwickler seit 2016",
       "text": "Mein Ziel ist es, kreative und erfinderische Ideen direkt in eine effiziente und zukunftssichere Implementation zu übersetzen.",
       "btn-contact": "Kontaktieren",
-      "btn-services": "Dienstleistungen"
+      "btn-technologies": "Technologien"
     },
     "about": {
       "my-life": {
@@ -54,8 +54,8 @@
         "text": "Neben Webdesign und der Full-Stack Webentwicklung arbeite ich gerne mit low-level Hardware und realisiere meine eigenen Schaltungen."
       }
     },
-    "services": {
-      "headline": "Dienstleistungen",
+    "skills": {
+      "headline": "Fähigkeiten",
       "frontend": {
         "title": "Frontend entwicklung",
         "text": "Sie besitzen bereits ein vollendetes Design und benötigen nun eine anpassungsfähige, interaktive und wartbare Umsetzung als web-app?"
@@ -73,7 +73,7 @@
         "text": "Ich setze das Projekt in einer Echtzeitumgebung auf und dokumentiere diesen Arbeitsprozess für zukunftige Wartungen, sollte dies erwünscht sein."
       }
     },
-    "skills": {
+    "technologies": {
       "frontend-design": {
         "menu": "Frontend Design",
         "headline": "Ideen werden zu konkreten Designs verwandelt",
@@ -125,17 +125,13 @@
         "headline": "Hinzufügen umwerfender Funktionalitäten zu Ihrer App",
         "text": "Benutzerverwaltung, Rechtesysteme, Validierungen, persistente Modelle und vieles mehr... Alles ist möglich, dank dem modernen Stack.",
         "tools": {
-          "spring": {
-            "headline": "Spring Boot",
-            "text": "Robustes und zuverlässiges Framework"
+          "nestjs": {
+            "headline": "NestJS",
+            "text": "Robustes und verlässliches Backend"
           },
-          "kotlin": {
-            "headline": "Kotlin",
-            "text": "Moderne und aussagekräftige Sprache"
-          },
-          "exposed": {
-            "headline": "JetBrains Exposed",
-            "text": "Mächtigstes ORM am Markt"
+          "typeorm": {
+            "headline": "TypeORM",
+            "text": "Mächtigstes ORM auf dem Markt"
           },
           "jwt": {
             "headline": "JWTs",

@@ -6,8 +6,8 @@
         "sections": {
           "landing": "Landing",
           "about": "About Me",
-          "services": "Offered Services",
-          "skills": "Acquired Skills",
+          "skills": "My Skills",
+          "technologies": "Technologies",
           "contact": "Contact"
         }
       },
@@ -38,7 +38,7 @@
       "subheadline": "Developing since 2016",
       "text": "Striving to translate creative and inventive ideas straight into efficient and future-proof implementations.",
       "btn-contact": "Get In Touch",
-      "btn-services": "My Services"
+      "btn-technologies": "Technologies"
     },
     "about": {
       "my-life": {
@@ -54,28 +54,28 @@
         "text": "Besides web design and full-stack web development, I’m also working with low level hardware and engineer my own circuits."
       }
     },
-    "services": {
+    "skills": {
       "frontend": {
         "title": "Frontend development",
-        "text": "You already have a finished design and now need to translate it to a fully responsive, interactive and well-maintainable web-app?"
+        "text": "Turning finished designs into interactable, responsive and well-maintainable web-apps, which provide an intuitive interface between the user and the machine."
       },
       "backend": {
         "title": "Backend development",
-        "text": "Need persistent data, users, permissions, dynamic content and other creative features? I got you covered!"
+        "text": "Validating input, storing, serving and processing data, managing permissions or even handle realtime event-based communication channels."
       },
       "ui-ux": {
         "title": "UI/UX design",
-        "text": "If there are enough predefined properties of your idea, we can work out a fully custom design using feedback to create iterations."
+        "text": "It's important to flesh out newly born ideas into concrete interface designs to be able to plan ahead features and communicate with the client."
       },
       "hosting": {
         "title": "Hosting And Deployment",
-        "text": "I will set up the project in a live environment and provide you with directions for further maintaining, if desired."
+        "text": "What good is a fully-working web-app if it's not reachable? Deployment needs to be an automated process that doesn't get in the way of actual development."
       }
     },
-    "skills": {
+    "technologies": {
       "frontend-design": {
         "menu": "Frontend Design",
-        "headline": "Turning ideas into a concrete design",
+        "headline": "Turning ideas into concrete design",
         "text": "I believe that every successful project needs to be properly planned ahead, which includes designing the layout for all viewports, deciding on color-schemes, animations and interactive features.",
         "tools": {
           "xd": {
@@ -95,7 +95,7 @@
       "frontend-development": {
         "menu": "Frontend Developmen",
         "headline": "Turning concrete designs into working apps",
-        "text": "This is where the magic happens! Once we agree on a design, I can implement it as a fully responsive, interactive and cross-device working application, providing all frontend functionality.",
+        "text": "This is where the magic happens! Once agreed on a design, I can implement it as a fully responsive, interactive and cross-device working application, providing all frontend functionality.",
         "tools": {
           "angular": {
             "headline": "Angular",
@@ -124,16 +124,12 @@
         "headline": "Adding astonishing functionality to your app",
         "text": "Managing users, permissions, adding validation, having persistent models and much more… Everything is possible, thanks to this modern stack.",
         "tools": {
-          "spring": {
-            "headline": "Spring Boot",
+          "nestjs": {
+            "headline": "NestJS",
             "text": "Robust and reliable framework"
           },
-          "kotlin": {
-            "headline": "Kotlin",
-            "text": "Modern and precise language"
-          },
-          "exposed": {
-            "headline": "JetBrains Exposed",
+          "typeorm": {
+            "headline": "TypeORM",
             "text": "Most powerful ORM out there"
           },
           "jwt": {
@@ -145,7 +141,7 @@
       "deployment": {
         "menu": "Deployment",
         "headline": "Launching the finished product into the web",
-        "text": "It’s time to let the world interact with your shiny new product, provide extremely high availability and keep scalability in mind!",
+        "text": "It’s time to let the world interact with the shiny new product, provide extremely high availability and keep scalability in mind!",
         "tools": {
           "docker": {
             "headline": "Docker",
